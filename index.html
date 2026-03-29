@@ -19,9 +19,9 @@ h1{font-size:18px;font-weight:500;margin-bottom:4px}
 .meal-card{background:#fff;border:1px solid #e5e5e3;border-radius:12px;padding:1rem;cursor:pointer}
 .meal-card.active{border:2px solid #378ADD}
 .meal-badge{display:inline-block;font-size:11px;font-weight:500;padding:2px 8px;border-radius:8px;margin-bottom:6px}
-.m1-badge{background:#FAEEDA;color:#633806}
+.m1-badge{background:#E1F5EE;color:#085041}
 .m2-badge{background:#E6F1FB;color:#0C447C}
-.m3-badge{background:#E1F5EE;color:#085041}
+.m3-badge{background:#FAEEDA;color:#633806}
 .meal-title{font-size:13px;font-weight:500;margin-bottom:10px}
 .comp-row{display:flex;gap:8px;margin-bottom:5px}
 .comp-label{font-size:10px;font-weight:500;color:#888;text-transform:uppercase;letter-spacing:.04em;min-width:50px;padding-top:1px}
@@ -32,7 +32,7 @@ h1{font-size:18px;font-weight:500;margin-bottom:4px}
 .detail-name{font-size:13px;font-weight:500;margin-bottom:2px}
 .detail-note{font-size:12px;color:#666}
 .pill{font-size:10px;font-weight:500;background:#f1efe8;color:#5f5e5a;padding:2px 8px;border-radius:8px}
-.tip{font-size:12px;color:#666;margin-top:4px}
+.tip{font-size:12px;color:#666;margin-top:8px;padding-top:8px;border-top:1px solid #f0f0ee}
 .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1rem}
 .stat-card{background:#f1efe8;border-radius:8px;padding:.875rem 1rem}
 .stat-label{font-size:11px;color:#888;margin-bottom:4px}
@@ -59,13 +59,18 @@ h1{font-size:18px;font-weight:500;margin-bottom:4px}
 .grocery-name{font-size:13px;font-weight:500}
 .grocery-name.done{opacity:.4;text-decoration:line-through}
 .grocery-qty{font-size:11px;color:#888;margin-top:1px}
-.deal-tag{font-size:10px;font-weight:500;background:#E1F5EE;color:#085041;padding:1px 6px;border-radius:8px;margin-left:5px}
+.store-tag{font-size:10px;font-weight:500;padding:1px 6px;border-radius:6px;margin-left:5px}
+.store-qfc{background:#FEF3D0;color:#633806}
+.store-fm{background:#E6F1FB;color:#0C447C}
+.store-tj{background:#E1F5EE;color:#085041}
+.store-hmart{background:#FDECEA;color:#5C1A1A}
+.deal-tag{font-size:10px;font-weight:500;background:#E1F5EE;color:#085041;padding:1px 6px;border-radius:6px;margin-left:5px}
 .schedule-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
 .day-hdr{font-size:11px;font-weight:500;color:#888;text-align:center;padding-bottom:3px}
 .slot{border-radius:8px;padding:6px 4px;text-align:center;font-size:11px;font-weight:500;border:1px solid #e5e5e3;margin-bottom:5px}
-.slot.m1{background:#FAEEDA;color:#633806;border-color:#FAC775}
+.slot.m1{background:#E1F5EE;color:#085041;border-color:#9FE1CB}
 .slot.m2{background:#E6F1FB;color:#0C447C;border-color:#B5D4F4}
-.slot.m3{background:#E1F5EE;color:#085041;border-color:#9FE1CB}
+.slot.m3{background:#FAEEDA;color:#633806;border-color:#FAC775}
 .slot-type{font-size:10px;font-weight:400;opacity:.7;display:block;margin-top:1px}
 .step-row{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid #f0f0ee}
 .step-row:last-child{border-bottom:none}
@@ -77,16 +82,15 @@ h1{font-size:18px;font-weight:500;margin-bottom:4px}
 .deal-savings{font-size:12px;font-weight:500;color:#085041;background:#E1F5EE;padding:2px 8px;border-radius:8px;white-space:nowrap}
 .deal-name{font-size:13px;font-weight:500}
 .deal-desc{font-size:11px;color:#666;margin-top:2px}
-.fridge-row{display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #f0f0ee}
-.fridge-row:last-child{border-bottom:none}
-.fridge-item{font-size:13px;font-weight:500;min-width:160px}
-.fridge-use{font-size:12px;color:#666}
+.section-hdr{font-size:11px;font-weight:500;color:#888;text-transform:uppercase;letter-spacing:.06em;margin:1.25rem 0 .75rem}
+.store-legend{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1rem}
+.legend-item{font-size:11px;font-weight:500;padding:2px 8px;border-radius:6px}
 </style>
 </head>
 <body>
 <div class="app">
 <h1>Meal Prep Planner</h1>
-<p class="subtitle">12 meals &nbsp;·&nbsp; 2 adults &nbsp;·&nbsp; Sunday–Thursday &nbsp;·&nbsp; Fred Meyer deals applied</p>
+<p class="subtitle">Week of Mar 30 &nbsp;·&nbsp; ~16 meals &nbsp;·&nbsp; 2 adults &nbsp;·&nbsp; Sun–Thu &nbsp;·&nbsp; QFC + Fred Meyer + TJ's + H Mart</p>
 
 <div class="tabs">
   <button class="tab active" onclick="switchTab('meals',this)">Meals</button>
@@ -100,30 +104,36 @@ h1{font-size:18px;font-weight:500;margin-bottom:4px}
   <div class="meal-cards">
     <div class="meal-card active" id="mc-1" onclick="selectMeal(1)">
       <span class="meal-badge m1-badge">Meal 1</span>
-      <div class="meal-title">SW Carne Asada</div>
-      <div class="comp-row"><span class="comp-label">Protein</span><span class="comp-val">Carne asada</span></div>
-      <div class="comp-row"><span class="comp-label">Carb</span><span class="comp-val">Cilantro rice</span></div>
-      <div class="comp-row"><span class="comp-label">Veggie</span><span class="comp-val">Elote corn salad</span></div>
+      <div class="meal-title">Miso Garlic Chicken Bowl</div>
+      <div class="comp-row"><span class="comp-label">Protein</span><span class="comp-val">Chicken thighs</span></div>
+      <div class="comp-row"><span class="comp-label">Carb</span><span class="comp-val">White rice</span></div>
+      <div class="comp-row"><span class="comp-label">Veggie</span><span class="comp-val">Cucumber + tomatoes</span></div>
     </div>
     <div class="meal-card" id="mc-2" onclick="selectMeal(2)">
       <span class="meal-badge m2-badge">Meal 2</span>
-      <div class="meal-title">BBQ Pulled Pork</div>
-      <div class="comp-row"><span class="comp-label">Protein</span><span class="comp-val">Pulled pork</span></div>
-      <div class="comp-row"><span class="comp-label">Carb</span><span class="comp-val">Brioche / GF buns</span></div>
-      <div class="comp-row"><span class="comp-label">Veggie</span><span class="comp-val">Creamy coleslaw</span></div>
+      <div class="meal-title">Italian Sous Vide Chicken</div>
+      <div class="comp-row"><span class="comp-label">Protein</span><span class="comp-val">Chicken breast</span></div>
+      <div class="comp-row"><span class="comp-label">Carb</span><span class="comp-val">Lemon herb orzo</span></div>
+      <div class="comp-row"><span class="comp-label">Veggie</span><span class="comp-val">Sous vide carrots</span></div>
     </div>
     <div class="meal-card" id="mc-3" onclick="selectMeal(3)">
       <span class="meal-badge m3-badge">Meal 3</span>
-      <div class="meal-title">Italian Meatballs</div>
-      <div class="comp-row"><span class="comp-label">Protein</span><span class="comp-val">Carando meatballs</span></div>
-      <div class="comp-row"><span class="comp-label">Carb</span><span class="comp-val">Penne (1 adult)</span></div>
-      <div class="comp-row"><span class="comp-label">Veggie</span><span class="comp-val">Roasted zucchini</span></div>
+      <div class="meal-title">Sirloin + Med Salad</div>
+      <div class="comp-row"><span class="comp-label">Protein</span><span class="comp-val">Petite sirloin</span></div>
+      <div class="comp-row"><span class="comp-label">Carb</span><span class="comp-val">Chickpeas (in salad)</span></div>
+      <div class="comp-row"><span class="comp-label">Veggie</span><span class="comp-val">Mediterranean salad</span></div>
     </div>
   </div>
   <div id="meal-detail"></div>
 </div>
 
 <div id="tab-grocery" class="panel">
+  <div class="store-legend">
+    <span class="legend-item store-qfc">QFC</span>
+    <span class="legend-item store-fm">Fred Meyer</span>
+    <span class="legend-item store-tj">TJ's</span>
+    <span class="legend-item store-hmart">H Mart</span>
+  </div>
   <div class="stats-row">
     <div class="stat-card"><div class="stat-label">Total items</div><div class="stat-val" id="total-items">0</div></div>
     <div class="stat-card"><div class="stat-label">Checked off</div><div class="stat-val" id="checked-items">0</div></div>
@@ -143,43 +153,155 @@ h1{font-size:18px;font-weight:500;margin-bottom:4px}
 </div>
 
 <div id="tab-schedule" class="panel">
-  <p style="font-size:11px;font-weight:500;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.75rem">Weekly rotation</p>
+  <p class="section-hdr">Weekly rotation</p>
   <div class="schedule-grid" id="schedule-grid"></div>
-  <p style="font-size:11px;font-weight:500;color:#888;text-transform:uppercase;letter-spacing:.06em;margin:1.25rem 0 .75rem">Fridge items to use up</p>
-  <div id="fridge-list"></div>
+  <p class="section-hdr" style="margin-top:1.5rem">Store routing</p>
+  <div id="store-routing"></div>
 </div>
 
 <div id="tab-prep" class="panel">
   <div class="stats-row">
-    <div class="stat-card"><div class="stat-label">Total steps</div><div class="stat-val">13</div></div>
-    <div class="stat-card"><div class="stat-label">Hands-off time</div><div class="stat-val">~90m</div><div class="stat-sub">Instant Pot</div></div>
-    <div class="stat-card"><div class="stat-label">Active time</div><div class="stat-val">~1.5h</div><div class="stat-sub">Estimated</div></div>
+    <div class="stat-card"><div class="stat-label">Target meals</div><div class="stat-val">~16</div><div class="stat-sub">out of 20 possible</div></div>
+    <div class="stat-card"><div class="stat-label">Hands-off time</div><div class="stat-val">~2h</div><div class="stat-sub">Sous vide</div></div>
+    <div class="stat-card"><div class="stat-label">Active time</div><div class="stat-val">~1h</div><div class="stat-sub">Estimated</div></div>
   </div>
   <div id="prep-steps"></div>
 </div>
 
 <div id="tab-deals" class="panel">
   <div class="stats-row">
-    <div class="stat-card"><div class="stat-label">Deals found</div><div class="stat-val">11</div></div>
-    <div class="stat-card"><div class="stat-label">Est. savings</div><div class="stat-val">~$33</div></div>
-    <div class="stat-card"><div class="stat-label">Valid through</div><div class="stat-val" style="font-size:15px;padding-top:4px">Mar 24</div><div class="stat-sub">Fred Meyer</div></div>
+    <div class="stat-card"><div class="stat-label">Deals found</div><div class="stat-val">8</div></div>
+    <div class="stat-card"><div class="stat-label">Est. savings</div><div class="stat-val">~$25</div></div>
+    <div class="stat-card"><div class="stat-label">Valid through</div><div class="stat-val" style="font-size:15px;padding-top:4px">Mar 31</div><div class="stat-sub">QFC + Fred Meyer</div></div>
   </div>
   <div id="deals-list"></div>
 </div>
 </div>
 
 <script>
-const meals={1:{badge:'m1-badge',label:'Meal 1',title:'SW Carne Asada',components:[{label:'Protein',val:'Pre-marinated carne asada',note:'Air fry 400°F 8–10 min per side or sear; rest 5 min, slice thin'},{label:'Carb',val:'Cilantro lime rice',note:'Rice cooker — stir in lime juice, zest, and cilantro (from fridge) after cycle'},{label:'Veggie',val:'Elote-style street corn salad',note:'Charred frozen corn + black beans + cotija + mayo + chili powder + lime. Store dressing separate.'}],appliances:['Air fryer','Rice cooker'],tip:'Corn salad gets better after a day in the fridge. Toss with dressing fresh each meal.'},2:{badge:'m2-badge',label:'Meal 2',title:'BBQ Pulled Pork Sandwiches',components:[{label:'Protein',val:'BBQ pulled pork',note:"Instant Pot 90 min high pressure; shred with two forks, toss in Kinder's BBQ sauce (BOGO this week)"},{label:'Carb',val:"Brioche buns (regular) + GF buns (Canyon Bakehouse / Udi's)",note:'Store buns in bag — do not pre-assemble. Grab bun at mealtime. GF stored separately.'},{label:'Veggie',val:'Creamy coleslaw',note:'Half bag of coleslaw from fridge + mayo + ACV + sugar + celery seed. Store dressing separate.'}],appliances:['Instant Pot'],tip:"Buns stay fresh all week in the bag. Pulled pork reheats great — microwave 90 sec with a splash of water."},3:{badge:'m3-badge',label:'Meal 3',title:'Italian Meatballs',components:[{label:'Protein',val:'Carando pre-made meatballs',note:'$5 at Fred Meyer this week. Heat in simmering marinara 15 min — no rolling or baking.'},{label:'Carb',val:'Penne pasta — 1 adult only',note:'1 lb penne (BOGO deal). Cook al dente; toss in sauce. Second adult skips pasta, just has meatballs + veggie.'},{label:'Veggie',val:'Roasted zucchini + grape tomatoes',note:'Single sheet pan, 400°F 20 min. Olive oil + Italian seasoning + garlic salt.'}],appliances:['Stovetop','Oven'],tip:'Meatballs store best IN the sauce — keeps them moist all week. Reheat together in the microwave.'}};
+const meals={
+  1:{badge:'m1-badge',label:'Meal 1',title:'Miso Garlic Chicken Bowl',cuisine:'Asian',
+    components:[
+      {label:'Protein',val:'Miso garlic chicken thighs (Aaron & Claire recipe)',note:'Marinate overnight in miso, soy, oyster sauce, mirin, garlic. Air fry 375°F 18–20 min skin-side up. Rest 5 min, slice thin.'},
+      {label:'Carb',val:'Steamed white rice',note:'Rice cooker. 1 cup dry per serving. Serve as bowl base.'},
+      {label:'Veggie',val:'Cucumber + cherry tomatoes',note:'No cook. Slice cucumber thin, halve tomatoes. Add lemon wedge at serving. Fresh toppings only — do not pre-mix.'}
+    ],
+    appliances:['Air fryer','Rice cooker'],
+    tip:'The miso marinade caramelizes beautifully in the air fryer. Key: 375°F not 400°F — the sugar burns at high heat. Marinate overnight for best flavor.',
+    store:'Shop chicken at QFC (BOGO free). Pantry items (miso, mirin, oyster sauce) at H Mart — significantly cheaper than anywhere else.'
+  },
+  2:{badge:'m2-badge',label:'Meal 2',title:'Italian Sous Vide Chicken Breast',cuisine:'Italian',
+    components:[
+      {label:'Protein',val:'Sous vide chicken breast',note:'Season with Italian herbs, garlic, lemon zest, olive oil, salt. Bag and seal. Sous vide 145°F for 1.5–2 hrs. Quick sear in air fryer or hot pan 2 min per side for color. Slice and store.'},
+      {label:'Carb',val:'Lemon herb orzo',note:'Cook orzo stovetop al dente. Drain, toss with olive oil, lemon juice, lemon zest, fresh parsley, parmesan. Holds perfectly all week.'},
+      {label:'Veggie',val:'Sous vide carrots',note:'Peel and cut carrots into uniform pieces. Bag with butter, honey, fresh thyme, salt. Sous vide 183°F for 1 hour. Silky texture, never mushy. Can run same time as chicken at different temp — use second bag or sequence.'}
+    ],
+    appliances:['Sous vide','Stovetop','Air fryer (sear)'],
+    tip:'Run the sous vide circulator for carrots first at 183°F (1 hr), then drop to 145°F for chicken (1.5–2 hrs). Completely hands-off time. Sear chicken last in the air fryer for a quick crust.',
+    store:'Shop chicken at QFC (same BOGO purchase as Meal 1 thighs). Orzo and pasta at Fred Meyer (Kroger brand 88¢).'
+  },
+  3:{badge:'m3-badge',label:'Meal 3',title:'Air Fryer Sirloin + Mediterranean Salad',cuisine:'American / Mediterranean',
+    components:[
+      {label:'Protein',val:'Boneless petite sirloin steak',note:'Season generously with salt, pepper, garlic powder. Air fry 400°F 8–10 min for medium. Rest 5 min — critical. Slice thin against the grain for storage. Reheat gently.'},
+      {label:'Carb',val:'Chickpeas (built into salad)',note:'Drain and rinse 1 can chickpeas. Marinate in the lemon oregano dressing for 15+ min — removes the canned taste entirely.'},
+      {label:'Veggie',val:'Mediterranean chopped salad + lemon oregano dressing',note:'Big batch: romaine, cherry tomatoes, cucumber, red onion, kalamata olives, feta, marinated chickpeas. Store base and dressing SEPARATELY. Dress per serving only. Holds 4–5 days. Add hard boiled eggs at serving.'}
+    ],
+    appliances:['Air fryer','No cook (salad)'],
+    tip:'This is the easiest assembly meal of the three. At mealtime: scoop salad, top with sliced steak, add a hard boiled egg, drizzle dressing. 60 seconds. The salad actually gets better days 2–3 as chickpeas soak up more dressing.',
+    store:'Steak at QFC (20% off sirloin). Feta, olives, chickpeas at TJ\'s (best prices). Eggs at Fred Meyer ($1.99 digital coupon). Lemons at QFC ($5 seedless bag).'
+  }
+};
 
-const groceryData=[{section:'PROTEIN',items:[{name:'Pre-marinated carne asada',qty:'3–3.5 lb',deal:false},{name:'Pork shoulder (bone-in or boneless)',qty:'4–4.5 lb',deal:false},{name:'Carando meatballs (refrigerated)',qty:'2 packs, 16 oz each',deal:true,dealText:'$5 w/ Card'}]},{section:'PRODUCE',items:[{name:'Limes',qty:'6',deal:false},{name:'Jalapeño',qty:'2',deal:false},{name:'Red onion',qty:'1 medium',deal:false},{name:'Garlic',qty:'2 bulbs',deal:false},{name:'Kroger grape tomatoes',qty:'2 × 10 oz',deal:true,dealText:'$2.49 w/ Card'},{name:'Zucchini',qty:'4 medium',deal:false},{name:'Yellow onion',qty:'1 large',deal:false},{name:'Avocados',qty:'2 (buy firm)',deal:false},{name:'Organic strawberries',qty:'16 oz',deal:true,dealText:'$4.99 w/ Card'},{name:'Blueberries (jumbo)',qty:'9.8 oz',deal:true,dealText:'$3.99 w/ Card'},{name:'Bananas',qty:'1 bunch (buy slightly green)',deal:false}]},{section:'DAIRY',items:[{name:'Happy Egg Co. free range eggs',qty:'2 × 12 ct packs',deal:true,dealText:'$4.99 ea w/ Card'},{name:'Cotija cheese',qty:'6–8 oz, crumbled',deal:false},{name:'Parmesan',qty:'~1 cup grated',deal:false}]},{section:'PANTRY',items:[{name:'Long-grain white rice',qty:'4 cups dry',deal:false},{name:"Nature's Own buns (regular)",qty:'1 pack, 8 ct',deal:true,dealText:'BOGO Free w/ Card'},{name:'Gluten-free buns (Canyon Bakehouse / Udi\'s)',qty:'1 pack, 6 ct',deal:false},{name:'Private Selection penne pasta',qty:'1 lb (1 adult)',deal:true,dealText:'BOGO Free w/ Card'},{name:'Private Selection marinara sauce',qty:'1 jar, 24 oz',deal:true,dealText:'BOGO Free w/ Card'},{name:"Kinder's BBQ sauce",qty:'2 bottles',deal:true,dealText:'BOGO Free w/ Card'},{name:'Best Foods mayonnaise',qty:'1 bottle',deal:true,dealText:'BOGO Free w/ Card'},{name:'Apple cider vinegar',qty:'Small bottle',deal:false},{name:'Olive oil',qty:'On hand — check first',deal:false},{name:'Sugar',qty:'On hand — check first',deal:false}]},{section:'SPICES',items:[{name:'Kosher salt + black pepper',qty:'On hand — check first',deal:false},{name:'Chili powder + cumin',qty:'On hand — check first',deal:false},{name:'Smoked paprika + garlic powder + onion powder',qty:'On hand — check first',deal:false},{name:'Italian seasoning',qty:'On hand — check first',deal:false},{name:'Private Selection / Simple Truth spices',qty:'As needed',deal:true,dealText:'B2G1 w/ Card'},{name:'Tajin (optional)',qty:'1 bottle',deal:false},{name:'Celery seed',qty:'Small jar',deal:false}]}];
+const groceryData=[
+  {section:'PROTEIN',items:[
+    {name:'Boneless skin-on chicken thighs',qty:'3–3.5 lb (6–7 thighs)',deal:true,dealText:'BOGO Free w/ Card',store:'qfc'},
+    {name:'Boneless chicken breasts',qty:'3 lb',deal:true,dealText:'BOGO Free w/ Card',store:'qfc'},
+    {name:'Boneless petite sirloin steaks',qty:'2.5–3 lb',deal:true,dealText:'$6.99/lb w/ Card',store:'fm'},
+  ]},
+  {section:'PRODUCE',items:[
+    {name:'Carrots (for sous vide)',qty:'1.5 lb, uniform size',deal:false,store:'any'},
+    {name:'English or Persian cucumbers',qty:'3',deal:false,store:'tj'},
+    {name:'Cherry tomatoes',qty:'3 pints',deal:false,store:'any'},
+    {name:'Romaine lettuce',qty:'2 large heads',deal:false,store:'any'},
+    {name:'Red onion',qty:'1 large',deal:false,store:'any'},
+    {name:'Lemons',qty:'6–7 (or 3lb seedless bag)',deal:true,dealText:'$5 seedless bag',store:'qfc'},
+    {name:'Garlic',qty:'1 bulb',deal:false,store:'any'},
+    {name:'Fresh thyme (for carrots)',qty:'Small bunch',deal:false,store:'tj'},
+    {name:'Fresh parsley (for orzo)',qty:'Small bunch',deal:false,store:'tj'},
+    {name:'Bananas',qty:'1 bunch (buy slightly green)',deal:false,store:'any'},
+    {name:'Green onions',qty:'1 bunch',deal:false,store:'any'},
+  ]},
+  {section:'DAIRY',items:[
+    {name:'Cage free eggs 18ct',qty:'1 pack (18 eggs — hard boil 8–10 for the week)',deal:true,dealText:'$1.99 digital coupon',store:'fm'},
+    {name:'Feta cheese',qty:'6–8 oz, crumbled',deal:false,store:'tj'},
+    {name:'Parmesan',qty:'Small wedge or container',deal:false,store:'tj'},
+    {name:'Butter (for sous vide carrots)',qty:'2 tbsp',deal:false,store:'any'},
+  ]},
+  {section:'PANTRY',items:[
+    {name:'White rice',qty:'6 cups dry',deal:false,store:'any'},
+    {name:'Orzo pasta',qty:'1.5 lb',deal:true,dealText:'Kroger brand 88¢',store:'fm'},
+    {name:'Canned chickpeas',qty:'3 cans, 15 oz each',deal:false,store:'tj'},
+    {name:'Kalamata olives (pitted)',qty:'10–12 oz jar',deal:false,store:'tj'},
+    {name:'Sparkling water',qty:'2–3 variety packs',deal:false,store:'tj'},
+    {name:'Kombucha',qty:'4–6 bottles',deal:true,dealText:'GT\'s 2/$6 w/ Digital Coupon',store:'fm'},
+    {name:'Miso paste (white or yellow)',qty:'1 small tub',deal:false,store:'hmart'},
+    {name:'Mirin',qty:'1 bottle',deal:false,store:'hmart'},
+    {name:'Oyster sauce',qty:'1 bottle',deal:false,store:'hmart'},
+    {name:'Soy sauce',qty:'On hand — check first',deal:false,store:'hmart'},
+    {name:'Olive oil (extra virgin)',qty:'On hand — check first',deal:false,store:'any'},
+    {name:'Dijon mustard (for dressing)',qty:'On hand — check first',deal:false,store:'any'},
+    {name:'Honey',qty:'On hand — check first',deal:false,store:'any'},
+    {name:'Neutral oil (for chicken sear)',qty:'On hand — check first',deal:false,store:'any'},
+  ]},
+  {section:'SPICES',items:[
+    {name:'Italian seasoning',qty:'On hand — check first',deal:false,store:'any'},
+    {name:'Garlic powder',qty:'On hand — check first',deal:false,store:'any'},
+    {name:'Dried oregano',qty:'On hand — check first',deal:false,store:'any'},
+    {name:'Kosher salt + black pepper',qty:'On hand — check first',deal:false,store:'any'},
+    {name:'Sugar (for miso marinade)',qty:'On hand — check first',deal:false,store:'any'},
+  ]},
+];
 
-const scheduleData=[{day:'Sun',lunch:'m1',ln:'SW',dinner:'m2',dn:'BBQ'},{day:'Mon',lunch:'m3',ln:'Italian',dinner:'m1',dn:'SW'},{day:'Tue',lunch:'m2',ln:'BBQ',dinner:'m3',dn:'Italian'},{day:'Wed',lunch:'m1',ln:'SW',dinner:'m2',dn:'BBQ'},{day:'Thu',lunch:'m3',ln:'Italian',dinner:'m1',dn:'SW'}];
+const scheduleData=[
+  {day:'Sun',lunch:'m1',ln:'Miso',dinner:'m2',dn:'Italian'},
+  {day:'Mon',lunch:'m3',ln:'Steak',dinner:'m1',dn:'Miso'},
+  {day:'Tue',lunch:'m2',ln:'Italian',dinner:'m3',dn:'Steak'},
+  {day:'Wed',lunch:'m1',ln:'Miso',dinner:'m2',dn:'Italian'},
+  {day:'Thu',lunch:'m3',ln:'Steak',dinner:'m1',dn:'Miso'},
+];
 
-const fridgeItems=[{item:'Cilantro',use:'Meal 1 rice + corn salad'},{item:'Frozen sweet corn (2 lbs)',use:'Elote corn salad base — char in air fryer'},{item:'Beef broth (1 cup)',use:'Instant Pot pork braising liquid'},{item:'Black beans (1 can)',use:'Added to elote corn salad'},{item:'Coleslaw bag (half)',use:'Meal 2 coleslaw base — just add dressing'},{item:'Parsley',use:'Meal 3 garnish over pasta'},{item:'Green onions',use:'Meal 1 rice + corn salad topping'},{item:'Asparagus + broccolini',use:'Bonus air fryer sides during the week'},{item:'Beets + microgreens',use:'Bonus side salad — balsamic + olive oil'}];
+const storeRouting=[
+  {store:'QFC',color:'store-qfc',items:'Chicken thighs + breasts (BOGO free), lemons ($5 seedless bag)'},
+  {store:'H Mart',color:'store-hmart',items:'Miso paste, mirin, oyster sauce, soy sauce — buy all Asian pantry items here, fraction of the price elsewhere'},
+  {store:"Trader Joe's",color:'store-tj',items:'Feta, parmesan, kalamata olives, canned chickpeas, fresh thyme, fresh parsley, cucumbers, sparkling water, bananas'},
+  {store:'Fred Meyer',color:'store-fm',items:'Sirloin steak ($6.99/lb), eggs ($1.99 digital coupon), orzo (Kroger brand 88¢), kombucha (GT\'s 2/$6 digital coupon)'},
+];
 
-const prepSteps=[{task:'Start Instant Pot — pulled pork',appliance:'Instant Pot',time:'90 min HP',note:'Pork shoulder + beef broth (fridge) + half onion + dry rub. Fully hands-off.'},{task:'Start Rice Cooker — plain white rice',appliance:'Rice Cooker',time:'25–30 min',note:'Stir in lime juice, zest, cilantro after cycle finishes.'},{task:'Simmer jar marinara with garlic + onion',appliance:'Stovetop',time:'10 min',note:'BOGO sauce — just warm with aromatics. No scratch marinara needed.'},{task:'Boil penne al dente (1 lb)',appliance:'Stovetop',time:'9–10 min',note:'Second burner. Drain and toss lightly in olive oil or ladle of sauce.'},{task:'Heat Carando meatballs in marinara',appliance:'Stovetop',time:'15 min low',note:'Drop in sauce and simmer — no rolling or baking. $5 deal saves 20+ min.'},{task:'Roast zucchini + grape tomatoes',appliance:'Oven',time:'20 min @ 400°F',note:'Single sheet pan. Olive oil + Italian seasoning + garlic salt.'},{task:'Char frozen sweet corn',appliance:'Air Fryer 1',time:'5–7 min @ 400°F',note:'Thaw first. Quick char adds flavor for elote salad.'},{task:'Air fry or sear carne asada',appliance:'Air Fryer 2',time:'8–10 min @ 400°F',note:'Cook in batches. Rest 5 min before slicing thin.'},{task:'Make elote corn salad',appliance:'No heat',time:'10 min',note:'Charred corn + black beans + cotija + mayo + chili powder + lime. Dressing separate.'},{task:'Make coleslaw dressing + toss',appliance:'No heat',time:'5 min',note:'Coleslaw bag (fridge) + mayo + ACV + sugar + celery seed. Store dressing separate.'},{task:'Shred pulled pork + toss in BBQ sauce',appliance:'Instant Pot (off)',time:'10 min',note:'Two forks. Store sauced pork in container — buns stay in bag.'},{task:'Finish cilantro rice',appliance:'Rice Cooker (off)',time:'5 min',note:'Fluff and stir in lime juice, zest, cilantro + green onions from fridge.'},{task:'Portion into containers',appliance:'—',time:'15 min',note:'Protein + carb + veggie separate for best reheat texture.'}];
+const prepSteps=[
+  {task:'Marinate chicken thighs overnight (do this Saturday night)',appliance:'No heat',time:'10 min',note:'Miso, soy, oyster sauce, mirin, sugar, garlic, olive oil, black pepper. Massage into 6–7 thighs, refrigerate.'},
+  {task:'Start sous vide circulator — carrots at 183°F',appliance:'Sous vide',time:'1 hr',note:'Bag carrots with butter, honey, fresh thyme, salt. Fully hands-off.'},
+  {task:'Start Rice Cooker — white rice',appliance:'Rice cooker',time:'25–30 min',note:'Plain cycle. Fluff after.'},
+  {task:'Cook orzo stovetop al dente',appliance:'Stovetop',time:'8–9 min',note:'Drain, toss immediately with olive oil, lemon juice, zest, parsley, parmesan. Let cool.'},
+  {task:'Drop sous vide to 145°F — add chicken breast bags',appliance:'Sous vide',time:'1.5–2 hrs',note:'Season chicken with Italian herbs, garlic, lemon zest, olive oil, salt. Bag and seal. Hands-off.'},
+  {task:'Air fry miso chicken thighs',appliance:'Air fryer 1',time:'18–20 min @ 375°F',note:'Skin-side up. Do not flip. The marinade caramelizes — watch temp, do not go above 375°F or miso burns.'},
+  {task:'Build Mediterranean salad base',appliance:'No heat',time:'15 min',note:'Chop romaine, halve tomatoes, dice cucumber, slice red onion, halve olives. Big container. Do NOT add dressing.'},
+  {task:'Make lemon oregano dressing + marinate chickpeas',appliance:'No heat',time:'5 min',note:'Whisk olive oil, lemon juice, lemon zest, oregano, Dijon, honey, salt, pepper. Add drained chickpeas to dressing bowl — let sit 15+ min, then add to salad.'},
+  {task:'Hard boil eggs',appliance:'Stovetop',time:'8 min',note:'Cool in ice water, peel, store whole in container with cold water. Add to salad at serving.'},
+  {task:'Quick sear sous vide chicken breast',appliance:'Air fryer 2 / Stovetop',time:'2 min per side',note:'Pat dry first — moisture kills the sear. Hot pan or air fryer 425°F 3–4 min. Rest, slice, store.'},
+  {task:'Air fry sirloin steaks',appliance:'Air fryer',time:'8–10 min @ 400°F',note:'Season well. Rest 5 min — critical. Slice thin against the grain. Store sliced for easy portioning.'},
+  {task:'Portion all meals into containers',appliance:'—',time:'15 min',note:'Protein separate from carb and veggie. Salad dressing in a small jar. Eggs in water. Label if helpful.'},
+];
 
-const dealsData=[{name:"Kinder's BBQ Sauce",type:'BOGO Free w/ Card',savings:'~$5–6',note:'Buy 2 — one for now, one for next week.'},{name:'Private Selection Pasta + Sauce',type:'BOGO Free w/ Card (mix & match)',savings:'~$4–5',note:'Covers penne AND marinara in one deal.'},{name:'Best Foods Mayonnaise',type:'BOGO Free w/ Card',savings:'~$4–5',note:'One jar covers elote dressing + coleslaw dressing.'},{name:"Nature's Own Perfectly Crafted Buns",type:'BOGO Free w/ Card',savings:'~$4',note:'Check if GF variety included at your location.'},{name:'Carando Meatballs (16 oz)',type:'$5 w/ Card',savings:'~$2–3',note:'Biggest Sunday time saver — skip rolling and baking entirely.'},{name:'Happy Egg Co. Free Range Eggs (12 ct)',type:'$4.99 w/ Card',savings:'~$2',note:'Grab 2 packs for 18 eggs. Counts toward $15 dairy coupon.'},{name:'Organic Strawberries (16 oz)',type:'$4.99 w/ Card',savings:'~$1–2',note:'On sale this week.'},{name:'Jumbo Blueberries (9.8 oz)',type:'$3.99 w/ Card',savings:'~$1–2',note:'On sale this week.'},{name:'Kroger Grape Tomatoes (10 oz)',type:'$2.49 w/ Card',savings:'~$2',note:'Cheaper swap for cherry tomatoes — same roasted veggie use.'},{name:'Private Selection / Simple Truth Spices',type:'Buy 2 Get 1 Free w/ Card',savings:'~$4–5',note:'Restock smoked paprika, Italian seasoning, garlic powder, etc.'},{name:'Darigold Dairy Dept ($15 spend)',type:'Save $3 w/ digital coupon',savings:'$3',note:'Eggs + cotija + parmesan gets you there. Clip in app before checkout.'}];
+const dealsData=[
+  {name:'Fresh Coastal Range Chicken (full line)',type:'BOGO Free w/ Card',savings:'~$8–10',store:'QFC',note:'Buy thighs + breasts in one transaction — both covered by the deal.'},
+  {name:'Boneless Petite Sirloin Steaks',type:'$6.99/lb w/ Card',savings:'~$2.50 vs QFC',store:'Fred Meyer',note:'Front page deal. Grab here along with eggs — same stop.'},
+  {name:'Wonderul Seedless Lemons (3lb)',type:'$5 flat',savings:'~$2',store:'QFC',note:'Covers orzo, chicken marinade, salad dressing, and serving wedges all week.'},
+  {name:'18ct Cage Free Eggs',type:'$1.99 w/ Digital Coupon',savings:'~$3',store:'Fred Meyer',note:'Clip in app before checkout. Hard boil for salad topping.'},
+  {name:'Kroger Pasta (orzo / spaghetti)',type:'88¢ w/ Card',savings:'~$1.50',store:'Fred Meyer',note:'Cheapest orzo around. Perfect for the lemon herb orzo.'},
+  {name:'Simple Truth Organic Bone Broth',type:'$3.79 w/ Card',savings:'~$1',store:'QFC',note:'Optional — can use as sous vide bag liquid for extra flavor in chicken.'},
+  {name:'Miso / mirin / oyster sauce',type:'Best prices in the PNW',savings:'~$5–8 vs grocery store',store:'H Mart',note:'Not a weekly deal — just always significantly cheaper here. Stock up if running low.'},
+  {name:'Feta + olives + chickpeas bundle',type:'Best prices consistently',savings:'~$3–4 vs QFC/FM',store:"Trader Joe's",note:"TJ's feta and kalamata olives are the best value for this salad. Get all three here."},
+];
 
 const checked=new Set();
 let currentFilter='all';
@@ -195,11 +317,17 @@ function selectMeal(n){
   document.querySelectorAll('.meal-card').forEach(c=>c.classList.remove('active'));
   document.getElementById('mc-'+n).classList.add('active');
   const m=meals[n];
-  let h=`<div class="detail-card"><div style="display:flex;align-items:center;gap:8px;margin-bottom:.875rem"><span class="meal-badge ${m.badge}">${m.label}</span><span style="font-size:15px;font-weight:500">${m.title}</span></div>`;
-  m.components.forEach(c=>{h+=`<div class="detail-comp"><span class="detail-label">${c.label}</span><div><div class="detail-name">${c.val}</div><div class="detail-note">${c.note}</div></div></div>`;});
-  h+=`<div style="border-top:1px solid #f0f0ee;margin-top:8px;padding-top:10px;display:flex;gap:6px;flex-wrap:wrap;align-items:center">`;
+  let h=`<div class="detail-card">`;
+  h+=`<div style="display:flex;align-items:center;gap:8px;margin-bottom:.875rem"><span class="meal-badge ${m.badge}">${m.label}</span><span style="font-size:15px;font-weight:500">${m.title}</span><span style="font-size:11px;color:#888;margin-left:4px">${m.cuisine}</span></div>`;
+  m.components.forEach(c=>{
+    h+=`<div class="detail-comp"><span class="detail-label">${c.label}</span><div><div class="detail-name">${c.val}</div><div class="detail-note">${c.note}</div></div></div>`;
+  });
+  h+=`<div style="display:flex;gap:5px;flex-wrap:wrap;margin:10px 0 8px">`;
   m.appliances.forEach(a=>h+=`<span class="pill">${a}</span>`);
-  h+=`</div><div class="tip" style="margin-top:8px">${m.tip}</div></div>`;
+  h+=`</div>`;
+  h+=`<div class="tip">${m.tip}</div>`;
+  h+=`<div style="font-size:11px;color:#666;margin-top:8px;padding-top:8px;border-top:1px solid #f0f0ee">${m.store}</div>`;
+  h+=`</div>`;
   document.getElementById('meal-detail').innerHTML=h;
 }
 
@@ -213,6 +341,15 @@ function filterGrocery(f,btn){
   document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
   renderGrocery();
+}
+
+function getStoreClass(store){
+  const map={qfc:'store-qfc',fm:'store-fm',tj:'store-tj',hmart:'store-hmart',any:''};
+  return map[store]||'';
+}
+function getStoreLabel(store){
+  const map={qfc:'QFC',fm:'Fred Meyer',tj:"TJ's",hmart:'H Mart',any:''};
+  return map[store]||'';
 }
 
 function renderGrocery(){
@@ -234,9 +371,18 @@ function renderGrocery(){
     h+=`<div class="grocery-section"><span class="sec-label sec-${s.section}">${s.section}</span>`;
     items.forEach(it=>{
       const d=checked.has(it.id);
+      const sc=getStoreClass(it.store);
+      const sl=getStoreLabel(it.store);
       h+=`<div class="grocery-row" onclick="toggleItem('${it.id}')">
         <div class="check-box ${d?'checked':''}"><svg class="check-icon" width="10" height="10" viewBox="0 0 10 10"><polyline points="1.5,5 4,7.5 8.5,2.5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div style="flex:1"><div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px"><span class="grocery-name ${d?'done':''}">${it.name}</span>${it.deal?`<span class="deal-tag">${it.dealText}</span>`:''}</div><div class="grocery-qty">${it.qty}</div></div>
+        <div style="flex:1">
+          <div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px">
+            <span class="grocery-name ${d?'done':''}">${it.name}</span>
+            ${it.deal?`<span class="deal-tag">${it.dealText}</span>`:''}
+            ${sc?`<span class="store-tag ${sc}">${sl}</span>`:''}
+          </div>
+          <div class="grocery-qty">${it.qty}</div>
+        </div>
       </div>`;
     });
     h+=`</div>`;
@@ -246,11 +392,19 @@ function renderGrocery(){
 
 function renderSchedule(){
   let h='';
-  scheduleData.forEach(d=>{h+=`<div><div class="day-hdr">${d.day}</div><div class="slot ${d.lunch}">${d.ln}<span class="slot-type">lunch</span></div><div class="slot ${d.dinner}">${d.dn}<span class="slot-type">dinner</span></div></div>`;});
+  scheduleData.forEach(d=>{
+    h+=`<div><div class="day-hdr">${d.day}</div><div class="slot ${d.lunch}">${d.ln}<span class="slot-type">lunch</span></div><div class="slot ${d.dinner}">${d.dn}<span class="slot-type">dinner</span></div></div>`;
+  });
   document.getElementById('schedule-grid').innerHTML=h;
-  let fh='';
-  fridgeItems.forEach(f=>{fh+=`<div class="fridge-row"><span class="fridge-item">${f.item}</span><span class="fridge-use">${f.use}</span></div>`;});
-  document.getElementById('fridge-list').innerHTML=fh;
+
+  let sh='';
+  storeRouting.forEach(s=>{
+    sh+=`<div style="display:flex;gap:10px;padding:8px 0;border-bottom:1px solid #f0f0ee;align-items:flex-start">
+      <span class="store-tag ${s.color}" style="padding:3px 10px;font-size:12px;white-space:nowrap">${s.store}</span>
+      <span style="font-size:12px;color:#666">${s.items}</span>
+    </div>`;
+  });
+  document.getElementById('store-routing').innerHTML=sh;
 }
 
 function renderPrep(){
@@ -263,7 +417,10 @@ function renderPrep(){
 
 function renderDeals(){
   let h='';
-  dealsData.forEach(d=>{h+=`<div class="deal-row"><div style="flex:1"><div class="deal-name">${d.name}</div><div class="deal-desc">${d.type} &nbsp;·&nbsp; ${d.note}</div></div><div class="deal-savings">${d.savings}</div></div>`;});
+  dealsData.forEach(d=>{
+    const sc=d.store==='QFC'?'store-qfc':d.store==='Fred Meyer'?'store-fm':d.store==="Trader Joe's"?'store-tj':'store-hmart';
+    h+=`<div class="deal-row"><div style="flex:1"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:2px"><div class="deal-name">${d.name}</div><span class="store-tag ${sc}">${d.store}</span></div><div class="deal-desc">${d.type} &nbsp;·&nbsp; ${d.note}</div></div><div class="deal-savings">${d.savings}</div></div>`;
+  });
   document.getElementById('deals-list').innerHTML=h;
 }
 
