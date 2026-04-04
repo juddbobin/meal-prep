@@ -83,6 +83,16 @@ h1{font-size:18px;font-weight:500;margin-bottom:4px}
 .store-legend{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1rem}
 .legend-item{font-size:11px;font-weight:500;padding:2px 8px;border-radius:6px}
 .reset-all-btn{width:100%;padding:8px;background:none;color:#cc4444;border:1px solid #f5c5c5;border-radius:10px;font-size:12px;cursor:pointer;margin-top:.5rem}
+.edit-btn{background:none;border:none;color:#ccc;cursor:pointer;font-size:13px;padding:2px 6px;flex-shrink:0;line-height:1}
+.edit-btn:hover{color:#888}
+.edit-form{background:#f7f7f5;border-radius:8px;padding:10px;margin-top:6px;display:flex;flex-direction:column;gap:6px}
+.edit-field{width:100%;border:1px solid #e5e5e3;border-radius:8px;padding:7px 10px;font-size:13px;font-family:inherit;background:#fff;color:#1a1a1a;outline:none}
+.edit-field:focus{border-color:#B5D4F4}
+.edit-actions{display:flex;gap:6px}
+.edit-save{flex:1;padding:7px;background:#1D9E75;color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:500;cursor:pointer}
+.edit-cancel{padding:7px 12px;background:none;color:#888;border:1px solid #e5e5e3;border-radius:8px;font-size:12px;cursor:pointer}
+.edit-delete{padding:7px 12px;background:none;color:#cc4444;border:1px solid #f5c5c5;border-radius:8px;font-size:12px;cursor:pointer}
+.item-edited{font-size:10px;color:#1D9E75;margin-left:5px;font-weight:500}
 /* Notes */
 .notes-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem}
 .notes-title{font-size:13px;font-weight:500}
@@ -219,6 +229,7 @@ h1{font-size:18px;font-weight:500;margin-bottom:4px}
 <script>
 const STORAGE_KEY='mealprep_w3_checked';
 const NOTES_KEY='mealprep_w3_notes';
+const EDITS_KEY='mealprep_w3_edits';
 
 const meals={
   1:{badge:'m1-badge',label:'Meal 1',title:'Mexican Shredded Chicken Bowls',cuisine:'Mexican',
@@ -348,11 +359,15 @@ const dealsData=[
 
 function loadChecked(){try{const d=localStorage.getItem(STORAGE_KEY);return d?new Set(JSON.parse(d)):new Set();}catch(e){return new Set();}}
 function saveChecked(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify([...checked]));}catch(e){}}
+function loadEdits(){try{const d=localStorage.getItem(EDITS_KEY);return d?JSON.parse(d):{};}catch(e){return{};}}
+function saveEdits(){try{localStorage.setItem(EDITS_KEY,JSON.stringify(edits));}catch(e){}}
 function loadNotes(){try{const d=localStorage.getItem(NOTES_KEY);return d?JSON.parse(d):[];}catch(e){return[];}}
 function saveNotes(){try{localStorage.setItem(NOTES_KEY,JSON.stringify(notes));}catch(e){}}
 
 const checked=loadChecked();
 let notes=loadNotes();
+let edits=loadEdits();
+let editingId=null;
 let currentFilter='all';
 
 function switchTab(tab,btn){
@@ -381,7 +396,7 @@ function toggleItem(id){
 }
 
 function resetChecked(){
-  if(confirm('Reset all checkboxes?')){checked.clear();saveChecked();renderGrocery();}
+  if(confirm('Reset checkboxes and edits?')){checked.clear();saveChecked();edits={};saveEdits();editingId=null;renderGrocery();}
 }
 
 function filterGrocery(f,btn){
@@ -415,21 +430,70 @@ function renderGrocery(){
       const d=checked.has(it.id);
       const sc=getStoreClass(it.store);
       const sl=getStoreLabel(it.store);
-      h+=`<div class="grocery-row" onclick="toggleItem('${it.id}')">
-        <div class="check-box ${d?'checked':''}"><svg class="check-icon" width="10" height="10" viewBox="0 0 10 10"><polyline points="1.5,5 4,7.5 8.5,2.5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div style="flex:1">
-          <div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px">
-            <span class="grocery-name ${d?'done':''}">${it.name}</span>
-            ${it.deal?`<span class="deal-tag">${it.dealText}</span>`:''}
-            ${sc?`<span class="store-tag ${sc}">${sl}</span>`:''}
+      const ov=edits[it.id];
+      const displayName=ov?ov.name:it.name;
+      const displayQty=ov?ov.qty:it.qty;
+      const isEditing=editingId===it.id;
+      const isDeleted=ov&&ov.deleted;
+      if(isDeleted)return;
+      if(isEditing){
+        h+=`<div style="padding:7px 0;border-bottom:1px solid #f0f0ee">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
+            <div class="check-box ${d?'checked':''}"><svg class="check-icon" width="10" height="10" viewBox="0 0 10 10"><polyline points="1.5,5 4,7.5 8.5,2.5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span style="font-size:13px;font-weight:500;color:#888">Editing item</span>
           </div>
-          <div class="grocery-qty">${it.qty}</div>
-        </div>
-      </div>`;
+          <div class="edit-form">
+            <input class="edit-field" id="ef-name-${it.id}" value="${displayName.replace(/"/g,'&quot;')}" placeholder="Item name">
+            <input class="edit-field" id="ef-qty-${it.id}" value="${displayQty.replace(/"/g,'&quot;')}" placeholder="Quantity">
+            <div class="edit-actions">
+              <button class="edit-save" onclick="saveEdit('${it.id}')">Save</button>
+              <button class="edit-cancel" onclick="cancelEdit()">Cancel</button>
+              <button class="edit-delete" onclick="deleteItem('${it.id}')">Remove</button>
+            </div>
+          </div>
+        </div>`;
+      } else {
+        h+=`<div style="display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:1px solid #f0f0ee">
+          <div class="check-box ${d?'checked':''}" onclick="toggleItem('${it.id}')" style="cursor:pointer;margin-top:2px"><svg class="check-icon" width="10" height="10" viewBox="0 0 10 10"><polyline points="1.5,5 4,7.5 8.5,2.5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div style="flex:1" onclick="toggleItem('${it.id}')" style="cursor:pointer">
+            <div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px">
+              <span class="grocery-name ${d?'done':''}">${displayName}</span>
+              ${ov?'<span class="item-edited">edited</span>':''}
+              ${it.deal&&!ov?`<span class="deal-tag">${it.dealText}</span>`:''}
+              ${sc&&!ov?`<span class="store-tag ${sc}">${sl}</span>`:''}
+            </div>
+            <div class="grocery-qty">${displayQty}</div>
+          </div>
+          <button class="edit-btn" onclick="startEdit('${it.id}')" title="Edit item">&#9998;</button>
+        </div>`;
+      }
     });
     h+=`</div>`;
   });
   document.getElementById('grocery-list').innerHTML=h;
+}
+
+function startEdit(id){editingId=id;renderGrocery();setTimeout(()=>{const el=document.getElementById('ef-name-'+id);if(el)el.focus();},50);}
+function cancelEdit(){editingId=null;renderGrocery();}
+function saveEdit(id){
+  const nameEl=document.getElementById('ef-name-'+id);
+  const qtyEl=document.getElementById('ef-qty-'+id);
+  if(!nameEl)return;
+  const name=nameEl.value.trim();
+  const qty=qtyEl.value.trim();
+  if(!name)return;
+  edits[id]={name,qty};
+  saveEdits();
+  editingId=null;
+  renderGrocery();
+}
+function deleteItem(id){
+  if(confirm('Remove this item from the list?')){
+    edits[id]={deleted:true};
+    saveEdits();
+    editingId=null;
+    renderGrocery();
+  }
 }
 
 function renderSchedule(){
