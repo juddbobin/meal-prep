@@ -14,19 +14,20 @@ h1{font-size:18px;font-weight:500;margin-bottom:4px}
 .tab{padding:8px 14px;font-size:13px;font-weight:500;cursor:pointer;border:none;background:none;color:#888;border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap}
 .tab.active{color:#1a1a1a;border-bottom-color:#1a1a1a}
 .panel{display:none}.panel.active{display:block}
-.meal-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1.25rem}
+.meal-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:1.25rem}
 @media(max-width:500px){.meal-cards{grid-template-columns:1fr}}
 .meal-card{background:#fff;border:1px solid #e5e5e3;border-radius:12px;padding:1rem;cursor:pointer}
 .meal-card.active{border:2px solid #378ADD}
 .meal-badge{display:inline-block;font-size:11px;font-weight:500;padding:2px 8px;border-radius:8px;margin-bottom:6px}
-.m1-badge{background:#FAEEDA;color:#633806}
+.m1-badge{background:#E6F1FB;color:#0C447C}
 .m2-badge{background:#E1F5EE;color:#085041}
-.m3-badge{background:#E6F1FB;color:#0C447C}
+.m3-badge{background:#FAEEDA;color:#633806}
+.ms-badge{background:#F3EDFB;color:#3A1A5C}
 .meal-title{font-size:13px;font-weight:500;margin-bottom:10px}
 .comp-row{display:flex;gap:8px;margin-bottom:5px}
 .comp-label{font-size:10px;font-weight:500;color:#888;text-transform:uppercase;letter-spacing:.04em;min-width:50px;padding-top:1px}
 .comp-val{font-size:12px}
-.detail-card{background:#fff;border:1px solid #e5e5e3;border-radius:12px;padding:1rem 1.25rem}
+.detail-card{background:#fff;border:1px solid #e5e5e3;border-radius:12px;padding:1rem 1.25rem;margin-bottom:1rem}
 .detail-comp{display:flex;gap:8px;margin-bottom:10px}
 .detail-label{font-size:10px;font-weight:500;color:#888;text-transform:uppercase;letter-spacing:.04em;min-width:52px;padding-top:2px}
 .detail-name{font-size:13px;font-weight:500;margin-bottom:2px}
@@ -48,42 +49,21 @@ h1{font-size:18px;font-weight:500;margin-bottom:4px}
 .sec-PRODUCE{background:#DFF2E8;color:#1A4A2E}
 .sec-DAIRY{background:#F3EDFB;color:#3A1A5C}
 .sec-PANTRY{background:#FEF3D0;color:#5A3C00}
-.sec-SPICES{background:#FDECEA;color:#5C1A1A}
+.sec-GRAINS{background:#E1F5EE;color:#085041}
+.sec-EXTRAS{background:#FDECEA;color:#5C1A1A}
 .grocery-section{margin-bottom:1rem}
-.grocery-row{display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:1px solid #f0f0ee;cursor:pointer;user-select:none}
+.grocery-row{display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:1px solid #f0f0ee;user-select:none}
 .grocery-row:last-child{border-bottom:none}
-.check-box{width:18px;height:18px;min-width:18px;border:1.5px solid #ccc;border-radius:4px;display:flex;align-items:center;justify-content:center;margin-top:1px;flex-shrink:0}
+.check-box{width:18px;height:18px;min-width:18px;border:1.5px solid #ccc;border-radius:4px;display:flex;align-items:center;justify-content:center;margin-top:2px;flex-shrink:0;cursor:pointer}
 .check-box.checked{background:#1D9E75;border-color:#1D9E75}
 .check-icon{display:none;color:#fff}
 .check-box.checked .check-icon{display:block}
 .grocery-name{font-size:13px;font-weight:500}
 .grocery-name.done{opacity:.4;text-decoration:line-through}
 .grocery-qty{font-size:11px;color:#888;margin-top:1px}
-.store-tag{font-size:10px;font-weight:500;padding:1px 6px;border-radius:6px;margin-left:5px}
-.store-fm{background:#E6F1FB;color:#0C447C}
-.store-tj{background:#E1F5EE;color:#085041}
-.store-hmart{background:#FDECEA;color:#5C1A1A}
 .deal-tag{font-size:10px;font-weight:500;background:#E1F5EE;color:#085041;padding:1px 6px;border-radius:6px;margin-left:5px}
-.schedule-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
-.day-hdr{font-size:11px;font-weight:500;color:#888;text-align:center;padding-bottom:3px}
-.slot{border-radius:8px;padding:6px 4px;text-align:center;font-size:11px;font-weight:500;border:1px solid #e5e5e3;margin-bottom:5px}
-.slot.m1{background:#FAEEDA;color:#633806;border-color:#FAC775}
-.slot.m2{background:#E1F5EE;color:#085041;border-color:#9FE1CB}
-.slot.m3{background:#E6F1FB;color:#0C447C;border-color:#B5D4F4}
-.slot-type{font-size:10px;font-weight:400;opacity:.7;display:block;margin-top:1px}
-.step-row{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid #f0f0ee}
-.step-row:last-child{border-bottom:none}
-.step-num{width:24px;height:24px;min-width:24px;background:#f1efe8;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;color:#666}
-.step-task{font-size:13px;font-weight:500;margin-bottom:2px}
-.step-note{font-size:12px;color:#666}
-.deal-row{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid #f0f0ee;align-items:flex-start}
-.deal-row:last-child{border-bottom:none}
-.deal-savings{font-size:12px;font-weight:500;color:#085041;background:#E1F5EE;padding:2px 8px;border-radius:8px;white-space:nowrap}
-.section-hdr{font-size:11px;font-weight:500;color:#888;text-transform:uppercase;letter-spacing:.06em;margin:1.25rem 0 .75rem}
-.store-legend{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1rem}
-.legend-item{font-size:11px;font-weight:500;padding:2px 8px;border-radius:6px}
-.reset-all-btn{width:100%;padding:8px;background:none;color:#cc4444;border:1px solid #f5c5c5;border-radius:10px;font-size:12px;cursor:pointer;margin-top:.5rem}
-.edit-btn{background:none;border:none;color:#ccc;cursor:pointer;font-size:13px;padding:2px 6px;flex-shrink:0;line-height:1}
+.pantry-tag{font-size:10px;font-weight:500;background:#f1efe8;color:#5f5e5a;padding:1px 6px;border-radius:6px;margin-left:5px}
+.edit-btn{background:none;border:none;color:#ccc;cursor:pointer;font-size:14px;padding:2px 5px;flex-shrink:0;line-height:1}
 .edit-btn:hover{color:#888}
 .edit-form{background:#f7f7f5;border-radius:8px;padding:10px;margin-top:6px;display:flex;flex-direction:column;gap:6px}
 .edit-field{width:100%;border:1px solid #e5e5e3;border-radius:8px;padding:7px 10px;font-size:13px;font-family:inherit;background:#fff;color:#1a1a1a;outline:none}
@@ -93,7 +73,42 @@ h1{font-size:18px;font-weight:500;margin-bottom:4px}
 .edit-cancel{padding:7px 12px;background:none;color:#888;border:1px solid #e5e5e3;border-radius:8px;font-size:12px;cursor:pointer}
 .edit-delete{padding:7px 12px;background:none;color:#cc4444;border:1px solid #f5c5c5;border-radius:8px;font-size:12px;cursor:pointer}
 .item-edited{font-size:10px;color:#1D9E75;margin-left:5px;font-weight:500}
-/* Notes */
+.meal-tag{font-size:10px;font-weight:500;padding:1px 6px;border-radius:6px;margin-left:5px}
+.mt1{background:#E6F1FB;color:#0C447C}
+.mt2{background:#E1F5EE;color:#085041}
+.mt3{background:#FAEEDA;color:#633806}
+.mts{background:#F3EDFB;color:#3A1A5C}
+.pantry-section{margin-top:1.5rem}
+.pantry-hdr{font-size:11px;font-weight:500;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;display:flex;align-items:center;gap:8px;cursor:pointer}
+.pantry-hdr-toggle{font-size:11px;color:#B5D4F4;font-weight:400}
+.pantry-row{display:flex;align-items:flex-start;gap:10px;padding:6px 0;border-bottom:1px solid #f0f0ee;opacity:.75}
+.pantry-row:last-child{border-bottom:none}
+.pantry-dot{width:8px;height:8px;min-width:8px;border-radius:50%;background:#1D9E75;margin-top:5px;flex-shrink:0}
+.pantry-name{font-size:13px;font-weight:500}
+.pantry-note{font-size:11px;color:#888;margin-top:1px}
+.reset-all-btn{width:100%;padding:8px;background:none;color:#cc4444;border:1px solid #f5c5c5;border-radius:10px;font-size:12px;cursor:pointer;margin-top:.5rem}
+.schedule-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.day-hdr{font-size:11px;font-weight:500;color:#888;text-align:center;padding-bottom:3px}
+.slot{border-radius:8px;padding:6px 4px;text-align:center;font-size:11px;font-weight:500;border:1px solid #e5e5e3;margin-bottom:5px}
+.slot.m1{background:#E6F1FB;color:#0C447C;border-color:#B5D4F4}
+.slot.m2{background:#E1F5EE;color:#085041;border-color:#9FE1CB}
+.slot.m3{background:#FAEEDA;color:#633806;border-color:#FAC775}
+.slot-type{font-size:10px;font-weight:400;opacity:.7;display:block;margin-top:1px}
+.step-row{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid #f0f0ee}
+.step-row:last-child{border-bottom:none}
+.step-num{width:24px;height:24px;min-width:24px;background:#f1efe8;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;color:#666;flex-shrink:0}
+.thread-badge{font-size:10px;font-weight:500;padding:2px 7px;border-radius:6px;white-space:nowrap}
+.t1{background:#E6F1FB;color:#0C447C}
+.t2{background:#E1F5EE;color:#085041}
+.t3{background:#FAEEDA;color:#633806}
+.t4{background:#F3EDFB;color:#3A1A5C}
+.t5{background:#FDECEA;color:#5C1A1A}
+.step-task{font-size:13px;font-weight:500;margin-bottom:2px}
+.step-note{font-size:12px;color:#666}
+.deal-row{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid #f0f0ee;align-items:flex-start}
+.deal-row:last-child{border-bottom:none}
+.deal-savings{font-size:12px;font-weight:500;color:#085041;background:#E1F5EE;padding:2px 8px;border-radius:8px;white-space:nowrap}
+.section-hdr{font-size:11px;font-weight:500;color:#888;text-transform:uppercase;letter-spacing:.06em;margin:1.25rem 0 .75rem}
 .notes-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem}
 .notes-title{font-size:13px;font-weight:500}
 .clear-btn{font-size:12px;color:#cc4444;background:none;border:none;cursor:pointer;padding:4px 8px}
@@ -115,7 +130,7 @@ h1{font-size:18px;font-weight:500;margin-bottom:4px}
 <body>
 <div class="app">
 <h1>Meal Prep Planner</h1>
-<p class="subtitle">Week of Apr 6 &nbsp;·&nbsp; ~16 meals &nbsp;·&nbsp; 2 adults &nbsp;·&nbsp; Sun–Thu &nbsp;·&nbsp; Fred Meyer + TJ's + H Mart</p>
+<p class="subtitle">Week of Apr 13 &nbsp;·&nbsp; 14 meals &nbsp;·&nbsp; 10k Endurance & Heart-Health &nbsp;·&nbsp; Fred Meyer</p>
 
 <div class="tabs">
   <button class="tab active" onclick="switchTab('meals',this)">Meals</button>
@@ -130,42 +145,39 @@ h1{font-size:18px;font-weight:500;margin-bottom:4px}
   <div class="meal-cards">
     <div class="meal-card active" id="mc-1" onclick="selectMeal(1)">
       <span class="meal-badge m1-badge">Meal 1</span>
-      <div class="meal-title">Mexican Shredded Chicken</div>
-      <div class="comp-row"><span class="comp-label">Protein</span><span class="comp-val">Shredded chicken breast</span></div>
-      <div class="comp-row"><span class="comp-label">Carb</span><span class="comp-val">White rice + tortillas</span></div>
-      <div class="comp-row"><span class="comp-label">Beans</span><span class="comp-val">Black + pinto beans</span></div>
+      <div class="meal-title">Nordic Bistro Chicken & Lentils</div>
+      <div class="comp-row"><span class="comp-label">Protein</span><span class="comp-val">Sous vide chicken breast</span></div>
+      <div class="comp-row"><span class="comp-label">Carb</span><span class="comp-val">Bone-broth green lentils</span></div>
+      <div class="comp-row"><span class="comp-label">Veggie</span><span class="comp-val">Balsamic air-fried carrots</span></div>
     </div>
     <div class="meal-card" id="mc-2" onclick="selectMeal(2)">
       <span class="meal-badge m2-badge">Meal 2</span>
-      <div class="meal-title">Mediterranean Turkey</div>
-      <div class="comp-row"><span class="comp-label">Protein</span><span class="comp-val">Spiced ground turkey</span></div>
-      <div class="comp-row"><span class="comp-label">Carb</span><span class="comp-val">Warm farro</span></div>
-      <div class="comp-row"><span class="comp-label">Veggie</span><span class="comp-val">Roasted asparagus</span></div>
+      <div class="meal-title">Hanoi Turkey Larb</div>
+      <div class="comp-row"><span class="comp-label">Protein</span><span class="comp-val">Ground turkey sauté</span></div>
+      <div class="comp-row"><span class="comp-label">Carb</span><span class="comp-val">Bone-broth brown rice</span></div>
+      <div class="comp-row"><span class="comp-label">Veggie</span><span class="comp-val">Garlicky air-fried broccoli</span></div>
     </div>
     <div class="meal-card" id="mc-3" onclick="selectMeal(3)">
       <span class="meal-badge m3-badge">Meal 3</span>
-      <div class="meal-title">Stuffed Sweet Potatoes</div>
-      <div class="comp-row"><span class="comp-label">Protein</span><span class="comp-val">Spiced ground chicken</span></div>
-      <div class="comp-row"><span class="comp-label">Carb</span><span class="comp-val">Sweet potato</span></div>
-      <div class="comp-row"><span class="comp-label">Beans</span><span class="comp-val">White beans</span></div>
+      <div class="meal-title">El Pato Chicken Braise</div>
+      <div class="comp-row"><span class="comp-label">Protein</span><span class="comp-val">Ground chicken braise</span></div>
+      <div class="comp-row"><span class="comp-label">Carb</span><span class="comp-val">Toasted pearl barley</span></div>
+      <div class="comp-row"><span class="comp-label">Side</span><span class="comp-val">Goat cheese chickpea mash</span></div>
+    </div>
+    <div class="meal-card" id="mc-s" onclick="selectMeal('s')">
+      <span class="meal-badge ms-badge">Cold Side</span>
+      <div class="meal-title">Levantine Grain Salad</div>
+      <div class="comp-row"><span class="comp-label">Base</span><span class="comp-val">Bulgur wheat</span></div>
+      <div class="comp-row"><span class="comp-label">Texture</span><span class="comp-val">Cucumber, pepper, herbs</span></div>
+      <div class="comp-row"><span class="comp-label">Dress</span><span class="comp-val">Lemon-garlic vinaigrette</span></div>
     </div>
   </div>
   <div id="meal-detail"></div>
-  <div style="margin-top:1rem;background:#fff;border:1px solid #e5e5e3;border-radius:12px;padding:1rem 1.25rem">
-    <div style="font-size:11px;font-weight:500;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Big batch salad — eat all week</div>
-    <div style="font-size:13px;font-weight:500;margin-bottom:4px">Quinoa tabbouleh-style salad</div>
-    <div style="font-size:12px;color:#666">Quinoa · cucumber · cherry tomatoes · red onion · fresh parsley + mint · lemon vinaigrette. Make one big batch Sunday. Store dressing separately. High protein, high fiber. Works as a side for any meal.</div>
-  </div>
 </div>
 
 <div id="tab-grocery" class="panel">
-  <div class="store-legend">
-    <span class="legend-item store-fm">Fred Meyer</span>
-    <span class="legend-item store-tj">TJ's</span>
-    <span class="legend-item store-hmart">H Mart</span>
-  </div>
   <div class="stats-row">
-    <div class="stat-card"><div class="stat-label">Total items</div><div class="stat-val" id="total-items">0</div></div>
+    <div class="stat-card"><div class="stat-label">Items to buy</div><div class="stat-val" id="total-items">0</div></div>
     <div class="stat-card"><div class="stat-label">Checked off</div><div class="stat-val" id="checked-items">0</div></div>
     <div class="stat-card"><div class="stat-label">Remaining</div><div class="stat-val" id="remaining-items">0</div></div>
   </div>
@@ -174,36 +186,39 @@ h1{font-size:18px;font-weight:500;margin-bottom:4px}
     <button class="filter-btn active" onclick="filterGrocery('all',this)">All</button>
     <button class="filter-btn" onclick="filterGrocery('PROTEIN',this)">Protein</button>
     <button class="filter-btn" onclick="filterGrocery('PRODUCE',this)">Produce</button>
+    <button class="filter-btn" onclick="filterGrocery('GRAINS',this)">Grains</button>
     <button class="filter-btn" onclick="filterGrocery('DAIRY',this)">Dairy</button>
-    <button class="filter-btn" onclick="filterGrocery('PANTRY',this)">Pantry</button>
-    <button class="filter-btn" onclick="filterGrocery('SPICES',this)">Spices</button>
+    <button class="filter-btn" onclick="filterGrocery('EXTRAS',this)">Extras</button>
     <button class="filter-btn" onclick="filterGrocery('deals',this)">Deals only</button>
   </div>
   <div id="grocery-list"></div>
-  <button class="reset-all-btn" onclick="resetChecked()">Reset all checkboxes</button>
+  <button class="reset-all-btn" onclick="resetAll()">Reset all checkboxes + edits</button>
 </div>
 
 <div id="tab-schedule" class="panel">
-  <p class="section-hdr">Weekly rotation</p>
+  <p class="section-hdr">Weekly rotation — Sun through Thu</p>
   <div class="schedule-grid" id="schedule-grid"></div>
-  <p class="section-hdr" style="margin-top:1.5rem">Store routing</p>
-  <div id="store-routing"></div>
+  <div style="margin-top:1.25rem;background:#fff;border:1px solid #e5e5e3;border-radius:12px;padding:1rem 1.25rem">
+    <div style="font-size:11px;font-weight:500;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Cold side — eat alongside any meal all week</div>
+    <div style="font-size:13px;font-weight:500;margin-bottom:3px">Levantine bulgur grain salad</div>
+    <div style="font-size:12px;color:#666">Make one big batch Sunday. Store dressing separately. Dress per serving. Low-glycemic fuel, holds 5 days easily.</div>
+  </div>
 </div>
 
 <div id="tab-prep" class="panel">
   <div class="stats-row">
-    <div class="stat-card"><div class="stat-label">Total steps</div><div class="stat-val">11</div></div>
-    <div class="stat-card"><div class="stat-label">Hands-off time</div><div class="stat-val">~45m</div><div class="stat-sub">Instant Pot</div></div>
-    <div class="stat-card"><div class="stat-label">Active time</div><div class="stat-val">~1.5h</div><div class="stat-sub">Estimated</div></div>
+    <div class="stat-card"><div class="stat-label">Threads</div><div class="stat-val">5</div><div class="stat-sub">Parallel</div></div>
+    <div class="stat-card"><div class="stat-label">Hands-off</div><div class="stat-val">~2.5h</div><div class="stat-sub">Sous vide</div></div>
+    <div class="stat-card"><div class="stat-label">Active time</div><div class="stat-val">~60m</div><div class="stat-sub">Estimated</div></div>
   </div>
   <div id="prep-steps"></div>
 </div>
 
 <div id="tab-deals" class="panel">
   <div class="stats-row">
-    <div class="stat-card"><div class="stat-label">Deals found</div><div class="stat-val">7</div></div>
-    <div class="stat-card"><div class="stat-label">Est. savings</div><div class="stat-val">~$20</div></div>
-    <div class="stat-card"><div class="stat-label">Valid through</div><div class="stat-val" style="font-size:15px;padding-top:4px">Apr 7</div><div class="stat-sub">Fred Meyer</div></div>
+    <div class="stat-card"><div class="stat-label">Deals found</div><div class="stat-val">5</div></div>
+    <div class="stat-card"><div class="stat-label">Est. savings</div><div class="stat-val">~$10</div></div>
+    <div class="stat-card"><div class="stat-label">Valid through</div><div class="stat-val" style="font-size:15px;padding-top:4px">Apr 14</div><div class="stat-sub">Fred Meyer</div></div>
   </div>
   <div id="deals-list"></div>
 </div>
@@ -227,142 +242,133 @@ h1{font-size:18px;font-weight:500;margin-bottom:4px}
 </div>
 
 <script>
-const STORAGE_KEY='mealprep_w3_checked';
-const NOTES_KEY='mealprep_w3_notes';
-const EDITS_KEY='mealprep_w3_edits';
+const SK='mealprep_w4_checked';
+const NK='mealprep_w4_notes';
+const EK='mealprep_w4_edits';
 
 const meals={
-  1:{badge:'m1-badge',label:'Meal 1',title:'Mexican Shredded Chicken Bowls',cuisine:'Mexican',
+  1:{badge:'m1-badge',label:'Meal 1',title:'Nordic Bistro Chicken & Lentils',servings:'5 servings',
     components:[
-      {label:'Protein',val:'Instant Pot shredded chicken breast',note:'Season with cumin, chili powder, garlic powder, oregano, salt + chicken broth. High pressure 15 min. Shred with two forks in the pot liquid — it becomes your sauce.'},
-      {label:'Carb',val:'White rice + flour tortillas',note:'Rice cooker for rice. Tortillas for taco / quesadilla nights. One protein, three formats all week — bowls, tacos, quesadillas with Tillamook cheese.'},
-      {label:'Beans',val:'Black beans + pinto beans',note:'One can each, drained and rinsed. Warm with cumin, garlic, pinch of salt. Store together in one container.'},
-      {label:'Veggie',val:'Shredded romaine + diced tomato',note:'No cook. Batch-shred lettuce, store with a dry paper towel to absorb moisture. Stays crisp 3–4 days.'}
+      {label:'Protein',val:'Sous vide lemon-thyme chicken breast',note:'Pantry frozen + ~1.5lb fresh from store = ~3lb total. Season with lemon zest, fresh thyme, garlic, olive oil, salt. Bag and seal. 145°F for 2.5 hrs. Pat dry and quick sear in hot pan or air fryer after. Slice and store.'},
+      {label:'Carb',val:'Green lentils simmered in bone broth',note:'Pantry. Instant Pot: 1 cup lentils + 2 cups bone broth + garlic + thyme. High pressure 15 min. Cholesterol-scrubbing soluble fiber — the anchor carb for this meal.'},
+      {label:'Veggie',val:'Balsamic air-fried carrots + cherry tomatoes + feta',note:'Slice carrots on bias. Toss with olive oil, balsamic, salt, pepper. Air fry 400°F 15–18 min. Finish with fresh Italian parsley and feta crumbles. Cherry tomatoes from pantry — halve and toss in last 3 min.'}
     ],
-    appliances:['Instant Pot','Rice cooker'],
-    tip:"Start the Instant Pot first — it's completely hands-off. The cooking liquid is gold, don't discard it. Shred the chicken right in the pot and let it soak up all the juices.",
-    store:'Chicken breast at Fred Meyer ($4.99/lb Simple Truth). Tortillas + beans at TJ\'s. Tillamook cheese at Fred Meyer (digital coupon).'
+    appliances:['Sous vide','Instant Pot','Air fryer'],
+    tip:'The sous vide runs completely unattended for 2.5 hrs — start it first, everything else happens around it. The lentils need no soaking in the Instant Pot, just rinse and go.',
   },
-  2:{badge:'m2-badge',label:'Meal 2',title:'Mediterranean Ground Turkey + Farro',cuisine:'Mediterranean',
+  2:{badge:'m2-badge',label:'Meal 2',title:'Hanoi Turkey Larb',servings:'5 servings',
     components:[
-      {label:'Protein',val:'Spiced ground turkey',note:'Brown in olive oil with garlic. Season: cumin, coriander, cinnamon, smoked paprika, salt, pepper. Cook through 8–10 min. Warm, aromatic spice profile totally different from Meal 1.'},
-      {label:'Carb',val:'Warm farro',note:'Cook 25–30 min in chicken broth (not water) for max flavor. Nutty, chewy, high fiber. Holds texture all week without going mushy. Stir in lemon juice + parsley at end.'},
-      {label:'Veggie',val:'Roasted asparagus',note:'Snap woody ends, toss with olive oil + garlic salt. Air fry 400°F 8–10 min. On sale $1.99/lb this week — great timing.'}
+      {label:'Protein',val:'Ground turkey sauté — mint, chile, lime',note:'Brown 2lb ground turkey in olive oil over medium-high. Add diced chiles, sliced green onion, minced garlic. Season with fish sauce (or soy), lime juice, pinch of sugar. Finish with fresh mint and a squeeze more lime off heat.'},
+      {label:'Carb',val:'Bone-broth brown rice',note:'Rice Cooker 1. Sub bone broth for the water — adds collagen and depth. Brown rice takes 40–45 min, so start this first alongside the sous vide. Slow-burn glycogen for long runs.'},
+      {label:'Veggie',val:'Garlicky air-fried broccoli',note:'Cut 2 heads into florets. Toss with olive oil, minced garlic, salt, red pepper flakes. Air Fryer 1 at 375°F for 12–14 min shaking halfway. High-volume fiber, holds texture all week.'}
     ],
-    appliances:['Stovetop','Air fryer'],
-    tip:'Cook farro in broth, not water — it makes a noticeable difference. A squeeze of lemon and fresh parsley stirred in after cooking keeps it feeling fresh even on day 4.',
-    store:'Ground turkey at TJ\'s. Asparagus at Fred Meyer ($1.99/lb). Farro at TJ\'s. Broth at Fred Meyer.'
+    appliances:['Stovetop','Rice cooker','Air fryer'],
+    tip:'Larb is fast — the whole turkey sauté takes 10 min. Save it for when the rice and broccoli are almost done so everything finishes together.',
   },
-  3:{badge:'m3-badge',label:'Meal 3',title:'Spiced Ground Chicken Stuffed Sweet Potatoes',cuisine:'Southwest',
+  3:{badge:'m3-badge',label:'Meal 3',title:'El Pato Chicken Braise & Barley',servings:'4 servings',
     components:[
-      {label:'Protein',val:'Spiced ground chicken + white beans',note:'Brown ground chicken with smoked paprika, chipotle powder, cumin, garlic, salt. Stir in drained white beans last 2 min to warm. Beans add fiber + bulk — makes it really filling.'},
-      {label:'Carb',val:'Air fryer sweet potatoes',note:'Scrub, poke with fork, air fry 390°F 35–40 min. Zero prep. Slice open and fluff. Reheat open-faced in air fryer 5 min to re-crisp the skin — so good.'},
-      {label:'Topping',val:'Greek yogurt + green onion + pepitas',note:'Greek yogurt = more protein than sour cream, same creamy tang. Pepitas add crunch + magnesium. Store toppings separately, add at serving.'}
+      {label:'Protein',val:'Ground chicken braise — El Pato + crushed tomatoes',note:'Brown 2lb ground chicken in olive oil. Add diced chiles, garlic. Pour in crushed tomatoes + El Pato sauce (pantry). Simmer 15–20 min until sauce thickens and chicken is deeply flavored. Rich, slightly spicy, excellent reheated.'},
+      {label:'Carb',val:'Toasted pearl barley',note:'Rice Cooker 2. Toast dry barley in a dry pan 3 min first — massive flavor upgrade. Then transfer to rice cooker with water/broth (1:2.5 ratio). Elite beta-glucan content for heart health and LDL reduction.'},
+      {label:'Side',val:'Goat cheese & chickpea mash',note:'Pantry chickpeas. Drain and rinse. Mash with goat cheese, lemon juice, garlic, olive oil, salt. Creamy, high-protein anchor. Store separately — serve a scoop alongside the braise and barley.'},
+      {label:'Veggie',val:'Crispy air-fried zucchini coins',note:'Slice 3 zucchini into coins. Toss with olive oil, garlic powder, Italian seasoning, salt. Air Fryer 2 at 400°F for 12 min. Crispy edges, tender center. Re-crisp in air fryer 3 min if needed during the week.'}
     ],
-    appliances:['Air fryer','Stovetop'],
-    tip:'Sweet potatoes are truly zero effort — just poke and air fry while you brown the chicken on the stovetop. Everything done in 40 min. Reheats in 90 seconds.',
-    store:'Ground chicken at Fred Meyer. Sweet potatoes at Fred Meyer. Fage Greek yogurt at Fred Meyer ($6.49). White beans + pepitas at TJ\'s.'
+    appliances:['Stovetop','Rice cooker','Air fryer'],
+    tip:'Toast the barley before it goes in the rice cooker — 3 minutes in a dry pan makes a noticeable difference in flavor and nuttiness. Don\'t skip it.',
+  },
+  s:{badge:'ms-badge',label:'Cold Side',title:'Levantine Refresh Grain Salad',servings:'All week',
+    components:[
+      {label:'Base',val:'Bulgur wheat — low glycemic endurance fuel',note:'Instant Pot: 1 cup bulgur + 1.5 cups water, high pressure 5 min. Or steep in boiling water 20 min covered. Cool completely before building salad. Much faster than rice or barley.'},
+      {label:'Texture',val:'English cucumber + mini bell peppers + green onion',note:'Small dice everything — this is a true chopped salad. Uniform pieces mean every forkful has the full flavor profile. Add fresh parsley and mint generously.'},
+      {label:'Dress',val:'Lemon-garlic vinaigrette',note:'3 tbsp olive oil + 2 tbsp lemon juice + 1 tsp lemon zest + 1 clove garlic minced + salt + pepper. Store separate from salad. Dress per serving — bulgur soaks up dressing fast so keeping it separate preserves texture all week.'}
+    ],
+    appliances:['Instant Pot','No heat (assembly)'],
+    tip:'Build this last on prep day while machines are winding down. Completely hands-off assembly. The bulgur takes 5 min in the Instant Pot after lentils are done — just wipe the pot.',
   }
 };
 
 const groceryData=[
   {section:'PROTEIN',items:[
-    {name:'Simple Truth natural boneless chicken breasts',qty:'3–3.5 lb',deal:true,dealText:'$4.99/lb',store:'fm'},
-    {name:'Ground turkey (93% lean)',qty:'2 lb',deal:false,store:'tj'},
-    {name:'Ground chicken',qty:'2 lb',deal:false,store:'fm'},
+    {meals:['m1'],name:'Boneless chicken breasts (fresh)',qty:'~1.5 lb (supplements 1lb 10oz pantry frozen)',deal:false},
+    {meals:['m2'],name:'Ground turkey (93% lean)',qty:'2 lb',deal:false},
+    {meals:['m3'],name:'Ground chicken',qty:'2 lb',deal:false},
   ]},
   {section:'PRODUCE',items:[
-    {name:'Asparagus',qty:'2 lb',deal:true,dealText:'$1.99/lb',store:'fm'},
-    {name:'Sweet potatoes (large)',qty:'4',deal:false,store:'fm'},
-    {name:'Romaine lettuce',qty:'1 large head',deal:false,store:'any'},
-    {name:'Cherry tomatoes',qty:'2 pints',deal:false,store:'any'},
-    {name:'English or Persian cucumbers',qty:'3',deal:false,store:'tj'},
-    {name:'Red onion',qty:'1 medium',deal:false,store:'any'},
-    {name:'Fresh parsley',qty:'1 bunch',deal:false,store:'tj'},
-    {name:'Fresh mint',qty:'1 bunch',deal:false,store:'tj'},
-    {name:'Green onions',qty:'1 bunch',deal:false,store:'any'},
-    {name:'Garlic',qty:'1 bulb',deal:false,store:'any'},
-    {name:'Lemons',qty:'4–5 (or 3lb seedless bag)',deal:true,dealText:'$5 bag',store:'fm'},
-    {name:'Limes',qty:'4',deal:false,store:'any'},
-    {name:'Organic strawberries',qty:'16 oz',deal:true,dealText:'$4.99 w/ Card',store:'fm'},
-    {name:'Bananas',qty:'1 bunch (buy slightly green)',deal:false,store:'any'},
+    {meals:['m1'],name:'Carrots',qty:'1 bunch (5–6 large)',deal:false},
+    {meals:['m2'],name:'Broccoli',qty:'2 large heads',deal:false},
+    {meals:['m3'],name:'Zucchini',qty:'3 medium',deal:false},
+    {meals:['s'],name:'English cucumbers',qty:'2',deal:false},
+    {meals:['s'],name:'Mini sweet peppers',qty:'1 bag (2 lb)',deal:true,dealText:'$6.00'},
+    {meals:[],name:'Seedless grapes (red, green, or black)',qty:'1–2 lb',deal:true,dealText:'$1.99/lb'},
+  ]},
+  {section:'GRAINS',items:[
+    {meals:['m3'],name:'Pearl barley',qty:'1 bag (16 oz)',deal:false},
+    {meals:['s'],name:'Bulgur wheat',qty:'1 bag (16 oz)',deal:false},
   ]},
   {section:'DAIRY',items:[
-    {name:'Fage Greek yogurt (plain)',qty:'32 oz',deal:true,dealText:'$6.49 w/ Card',store:'fm'},
-    {name:'Tillamook cheese (shredded or sliced)',qty:'1 pack',deal:true,dealText:'$6.99 digital coupon',store:'fm'},
+    {meals:['m3'],name:'Tillamook sour cream',qty:'2 × 16 oz',deal:true,dealText:'2/$4.00'},
   ]},
-  {section:'PANTRY',items:[
-    {name:'Flour tortillas (burrito size)',qty:'1 pack',deal:false,store:'tj'},
-    {name:'White rice',qty:'4 cups dry',deal:false,store:'any'},
-    {name:'Farro (pearled)',qty:'2 cups dry',deal:false,store:'tj'},
-    {name:'Quinoa',qty:'2 cups dry',deal:false,store:'tj'},
-    {name:'Canned black beans',qty:'2 cans, 15 oz',deal:false,store:'tj'},
-    {name:'Canned pinto beans',qty:'2 cans, 15 oz',deal:false,store:'tj'},
-    {name:'Canned white beans (cannellini)',qty:'2 cans, 15 oz',deal:false,store:'tj'},
-    {name:'Chicken broth or bone broth',qty:'32 oz',deal:false,store:'fm'},
-    {name:'Olive oil (extra virgin)',qty:'On hand — check first',deal:false,store:'any'},
-    {name:'Pepitas (pumpkin seeds)',qty:'Small bag',deal:false,store:'tj'},
-    {name:'GT\'s Synergy Kombucha',qty:'4–6 bottles',deal:true,dealText:'2/$6 digital coupon',store:'fm'},
-    {name:'Sparkling water',qty:'2–3 variety packs',deal:false,store:'tj'},
-  ]},
-  {section:'SPICES',items:[
-    {name:'Cumin',qty:'On hand — check first',deal:false,store:'any'},
-    {name:'Chili powder',qty:'On hand — check first',deal:false,store:'any'},
-    {name:'Smoked paprika',qty:'On hand — check first',deal:false,store:'any'},
-    {name:'Coriander',qty:'On hand — check first',deal:false,store:'any'},
-    {name:'Cinnamon',qty:'On hand — check first',deal:false,store:'any'},
-    {name:'Chipotle powder',qty:'1 small jar if needed',deal:false,store:'any'},
-    {name:'Garlic powder',qty:'On hand — check first',deal:false,store:'any'},
-    {name:'Dried oregano',qty:'On hand — check first',deal:false,store:'any'},
-    {name:'Spice Islands spices (restock)',qty:'Any needed',deal:true,dealText:'BOGO Free w/ Card',store:'fm'},
-    {name:'Kosher salt + black pepper',qty:'On hand — check first',deal:false,store:'any'},
+  {section:'EXTRAS',items:[
+    {meals:[],name:'Banza chickpea pasta (bonus endurance fuel)',qty:'1–2 boxes',deal:true,dealText:'$2.49 (buy 5+ items)'},
+    {meals:[],name:'Waterloo sparkling water',qty:'3 × 8-pack',deal:true,dealText:'3/$12.00'},
   ]},
 ];
+
+const pantryData=[
+  {name:'Chicken breast (frozen)',qty:'1 lb 10 oz',meals:['m1'],note:'Sous vide — combine with fresh from store'},
+  {name:'Green lentils (whole)',qty:'On hand',meals:['m1'],note:'Instant Pot in bone broth'},
+  {name:'Brown rice',qty:'On hand',meals:['m2'],note:'Rice Cooker 1 — cook in bone broth'},
+  {name:'Chickpeas (Greek style)',qty:'On hand',meals:['m3'],note:'Goat cheese mash'},
+  {name:'Crushed tomatoes',qty:'On hand',meals:['m3'],note:'El Pato braise base'},
+  {name:'El Pato tomato sauce',qty:'On hand',meals:['m3'],note:'El Pato braise — key flavor'},
+  {name:'Chicken bone broth',qty:'On hand',meals:['m1','m2'],note:'Lentil cook liquid + brown rice base'},
+  {name:'Fresh cherry tomatoes',qty:'On hand',meals:['m1'],note:'Air-fried with balsamic carrots'},
+  {name:'Diced chiles',qty:'On hand',meals:['m2','m3'],note:'Turkey larb + El Pato braise'},
+  {name:'Garlic / lemons / limes',qty:'On hand',meals:['m1','m2','m3','s'],note:'All meals — garlic base, acid finish'},
+  {name:'Parsley / mint / thyme',qty:'On hand',meals:['m1','m2','s'],note:'Carrot garnish, larb finish, grain salad herbs'},
+  {name:'Feta / goat cheese / parm',qty:'On hand',meals:['m1','m3'],note:'Carrot dish topping + chickpea mash'},
+];
+
+const mealTagClass={m1:'mt1',m2:'mt2',m3:'mt3',s:'mts'};
+const mealFullName={m1:'Nordic Bistro Chicken & Lentils',m2:'Hanoi Turkey Larb',m3:'El Pato Chicken Braise',s:'Levantine Grain Salad'};
+const mealTagLabel={m1:'M1',m2:'M2',m3:'M3',s:'Side'};
 
 const scheduleData=[
-  {day:'Sun',lunch:'m1',ln:'Mexican',dinner:'m2',dn:'Turkey'},
-  {day:'Mon',lunch:'m3',ln:'Sw. Pot',dinner:'m1',dn:'Mexican'},
-  {day:'Tue',lunch:'m2',ln:'Turkey',dinner:'m3',dn:'Sw. Pot'},
-  {day:'Wed',lunch:'m1',ln:'Mexican',dinner:'m2',dn:'Turkey'},
-  {day:'Thu',lunch:'m3',ln:'Sw. Pot',dinner:'m1',dn:'Mexican'},
-];
-
-const storeRouting=[
-  {store:'Fred Meyer',color:'store-fm',items:'Chicken breasts ($4.99/lb), asparagus ($1.99/lb), sweet potatoes, ground chicken, Fage yogurt ($6.49), Tillamook cheese (digital coupon), lemons ($5 bag), strawberries ($4.99), kombucha (2/$6 digital coupon)'},
-  {store:"Trader Joe's",color:'store-tj',items:'Ground turkey, farro, quinoa, black beans, pinto beans, white beans, flour tortillas, cucumbers, fresh parsley + mint, pepitas, sparkling water'},
-  {store:'H Mart',color:'store-hmart',items:'Bulk spices if running low — chipotle, coriander, cumin much cheaper here than grocery stores'},
+  {day:'Sun',lunch:'m1',ln:'Nordic',dinner:'m2',dn:'Larb'},
+  {day:'Mon',lunch:'m3',ln:'El Pato',dinner:'m1',dn:'Nordic'},
+  {day:'Tue',lunch:'m2',ln:'Larb',dinner:'m3',dn:'El Pato'},
+  {day:'Wed',lunch:'m1',ln:'Nordic',dinner:'m2',dn:'Larb'},
+  {day:'Thu',lunch:'m3',ln:'El Pato',dinner:'m1',dn:'Nordic'},
 ];
 
 const prepSteps=[
-  {task:'Start Instant Pot — shredded chicken',appliance:'Instant Pot',time:'15 min HP + 10 min rest',note:'Chicken breast + broth + cumin, chili powder, garlic powder, oregano, salt. High pressure 15 min. Natural release 10 min. Shred in pot.'},
-  {task:'Start Rice Cooker — white rice',appliance:'Rice cooker',time:'25–30 min',note:'Plain cycle. Fluff and set aside after.'},
-  {task:'Air fry sweet potatoes',appliance:'Air fryer 1',time:'35–40 min @ 390°F',note:'Poke with fork first. Completely hands-off. Run while doing everything else on the stovetop.'},
-  {task:'Cook farro in broth',appliance:'Stovetop',time:'25–30 min',note:'2 cups farro + 4 cups chicken broth. Simmer until tender, drain excess. Stir in lemon juice + chopped parsley. Let cool.'},
-  {task:'Brown ground turkey — Mediterranean spiced',appliance:'Stovetop',time:'10 min',note:'Olive oil + garlic, add turkey. Season with cumin, coriander, cinnamon, smoked paprika, salt, pepper. Cook through completely.'},
-  {task:'Brown ground chicken + stir in white beans',appliance:'Stovetop',time:'10 min',note:'Same pan after wiping. Smoked paprika, chipotle powder, cumin, garlic, salt. Add drained white beans last 2 min to warm through.'},
-  {task:'Roast asparagus',appliance:'Air fryer 2',time:'8–10 min @ 400°F',note:'Snap woody ends. Olive oil + garlic salt. Run while browning ground meats on stovetop — parallel cook.'},
-  {task:'Cook quinoa for tabbouleh salad',appliance:'Rice cooker 2 / Stovetop',time:'15 min',note:'1 cup quinoa + 2 cups water. Bring to boil, simmer 12 min, rest 5 min covered. Cool completely before building salad.'},
-  {task:'Warm and season beans',appliance:'Stovetop',time:'5 min',note:'Drain + rinse black and pinto beans. Warm in pan with cumin, garlic, salt. Store together in one container.'},
-  {task:'Build quinoa tabbouleh salad',appliance:'No heat',time:'10 min',note:'Cooled quinoa + diced cucumber + halved cherry tomatoes + red onion + chopped parsley + mint. Lemon juice + olive oil + salt dressing. Store dressing separately — dress per serving.'},
-  {task:'Portion all meals into containers',appliance:'—',time:'15 min',note:'Protein separate from carbs. Toppings (yogurt, pepitas, green onion) in small containers. Sweet potatoes store whole — reheat open in air fryer.'},
+  {thread:'T1 · Sous Vide',tc:'t1',task:'Start sous vide — chicken breast at 145°F',time:'2.5 hrs hands-off',note:'Season frozen+fresh chicken with lemon zest, thyme, garlic, olive oil, salt. Bag and seal. Drop in bath. Walk away.'},
+  {thread:'T2 · Rice Cooker',tc:'t2',task:'Rice Cooker 1 — bone-broth brown rice',time:'40–45 min',note:'Sub bone broth for water. Brown rice takes the longest of all grains — start immediately after sous vide.'},
+  {thread:'T2 · Rice Cooker',tc:'t2',task:'Rice Cooker 2 — toasted pearl barley',time:'35–40 min',note:'Toast barley dry in pan 3 min first. Transfer to rice cooker with broth (1:2.5 ratio). Start alongside brown rice.'},
+  {thread:'T3 · Instant Pot',tc:'t3',task:'Instant Pot — green lentils in bone broth',time:'15 min HP + release',note:'1 cup lentils + 2 cups bone broth + garlic + thyme. High pressure 15 min. Drain excess liquid. Season after.'},
+  {thread:'T3 · Instant Pot',tc:'t3',task:'Instant Pot — bulgur wheat (after lentils)',time:'5 min HP',note:'Quick wipe of pot. 1 cup bulgur + 1.5 cups water. High pressure 5 min. Fluff and spread to cool.'},
+  {thread:'T4 · Stovetop',tc:'t4',task:'Brown ground turkey — Hanoi larb',time:'10 min',note:'Medium-high heat. Add chiles, green onion, garlic. Fish sauce + lime juice + sugar. Finish with fresh mint off heat.'},
+  {thread:'T4 · Stovetop',tc:'t4',task:'Brown ground chicken — El Pato braise',time:'20 min',note:'Same stove, second burner. Brown chicken, add chiles + garlic, pour in crushed tomatoes + El Pato. Simmer 15–20 min.'},
+  {thread:'T4 · Stovetop',tc:'t4',task:'Chickpea mash — goat cheese',time:'5 min',note:'Drain pantry chickpeas. Mash with goat cheese, lemon, garlic, olive oil, salt. Adjust texture with a splash of broth if needed.'},
+  {thread:'T5 · Air Fryers',tc:'t5',task:'AF1 — garlicky broccoli florets',time:'12–14 min @ 375°F',note:'Olive oil + garlic + red pepper flakes. Shake halfway. High-volume fiber, crispy edges.'},
+  {thread:'T5 · Air Fryers',tc:'t5',task:'AF2 — balsamic carrots + batch zucchini coins',time:'15–18 min / 12 min @ 400°F',note:'Carrots with balsamic first. Then zucchini coins in batches. Finish carrot dish with feta + parsley.'},
+  {thread:'T1 · Sous Vide',tc:'t1',task:'Sear + slice sous vide chicken',time:'5 min',note:'Pat completely dry. 2 min per side in ripping hot pan or air fryer 425°F. Rest 5 min. Slice thin and store.'},
+  {thread:'Assembly',tc:'t2',task:'Build Levantine grain salad + portion all containers',time:'20 min',note:'Toss cooled bulgur with diced cucumber, peppers, green onion, parsley, mint. Store dressing separate. Then portion 14 containers — protein + carb + veggie separate where possible.'},
 ];
 
 const dealsData=[
-  {name:'Simple Truth Natural Chicken Breasts',type:'$4.99/lb w/ Card',savings:'~$3–4',store:'Fred Meyer',note:'Value pack. No antibiotics. Main protein for Meal 1 shredded chicken.'},
-  {name:'Asparagus',type:'$1.99/lb w/ Card',savings:'~$2',store:'Fred Meyer',note:'Perfectly timed — roasted veggie for Meal 2. Grab 2 lb.'},
-  {name:'Organic Strawberries (16 oz)',type:'$4.99 w/ Card',savings:'~$1–2',store:'Fred Meyer',note:'Snacks all week.'},
-  {name:'Fage Greek Yogurt (32 oz)',type:'$6.49 w/ Card',savings:'~$1–2',store:'Fred Meyer',note:'Topping for stuffed sweet potatoes. Higher protein than sour cream.'},
-  {name:'Tillamook Cheese',type:'$6.99 digital coupon',savings:'~$1',store:'Fred Meyer',note:'For quesadillas using Meal 1 shredded chicken.'},
-  {name:"GT's Synergy Kombucha",type:'2/$6 digital coupon',savings:'~$2',store:'Fred Meyer',note:'Clip in the Fred Meyer app before checkout.'},
-  {name:'Spice Islands Spices',type:'BOGO Free w/ Card',savings:'~$4–5',store:'Fred Meyer',note:'Good week to restock coriander, smoked paprika, chipotle, cinnamon.'},
+  {name:'Seedless Grapes (Red, Green, or Black)',type:'$1.99/lb',savings:'~$2',note:'Snacks all week. Great with the endurance theme.'},
+  {name:'Waterloo Sparkling Water (8-pack)',type:'3 for $12.00',savings:'~$4',note:'Buy 3 packs — covers the week for both adults.'},
+  {name:'Tillamook Sour Cream (16 oz)',type:'2 for $4.00',savings:'~$2',note:'Dollop on the El Pato chicken or barley bowls.'},
+  {name:'Mini Sweet Peppers (2 lb bag)',type:'$6.00',savings:'~$1–2',note:'Levantine grain salad. Pre-washed, no prep needed.'},
+  {name:'Banza Chickpea Pasta (bonus)',type:'$2.49 (buy 5+ participating items)',savings:'~$1–2',note:'Stack with other qualifying items to hit the 5+ threshold. Backup endurance fuel.'},
 ];
 
-function loadChecked(){try{const d=localStorage.getItem(STORAGE_KEY);return d?new Set(JSON.parse(d)):new Set();}catch(e){return new Set();}}
-function saveChecked(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify([...checked]));}catch(e){}}
-function loadEdits(){try{const d=localStorage.getItem(EDITS_KEY);return d?JSON.parse(d):{};}catch(e){return{};}}
-function saveEdits(){try{localStorage.setItem(EDITS_KEY,JSON.stringify(edits));}catch(e){}}
-function loadNotes(){try{const d=localStorage.getItem(NOTES_KEY);return d?JSON.parse(d):[];}catch(e){return[];}}
-function saveNotes(){try{localStorage.setItem(NOTES_KEY,JSON.stringify(notes));}catch(e){}}
+function loadChecked(){try{const d=localStorage.getItem(SK);return d?new Set(JSON.parse(d)):new Set();}catch(e){return new Set();}}
+function saveChecked(){try{localStorage.setItem(SK,JSON.stringify([...checked]));}catch(e){}}
+function loadNotes(){try{const d=localStorage.getItem(NK);return d?JSON.parse(d):[];}catch(e){return[];}}
+function saveNotes(){try{localStorage.setItem(NK,JSON.stringify(notes));}catch(e){}}
+function loadEdits(){try{const d=localStorage.getItem(EK);return d?JSON.parse(d):{};}catch(e){return{};}}
+function saveEdits(){try{localStorage.setItem(EK,JSON.stringify(edits));}catch(e){}}
 
 const checked=loadChecked();
 let notes=loadNotes();
@@ -381,11 +387,11 @@ function selectMeal(n){
   document.querySelectorAll('.meal-card').forEach(c=>c.classList.remove('active'));
   document.getElementById('mc-'+n).classList.add('active');
   const m=meals[n];
-  let h=`<div class="detail-card"><div style="display:flex;align-items:center;gap:8px;margin-bottom:.875rem"><span class="meal-badge ${m.badge}">${m.label}</span><span style="font-size:15px;font-weight:500">${m.title}</span><span style="font-size:11px;color:#888;margin-left:4px">${m.cuisine}</span></div>`;
+  let h=`<div class="detail-card"><div style="display:flex;align-items:center;gap:8px;margin-bottom:.25rem"><span class="meal-badge ${m.badge}">${m.label}</span><span style="font-size:15px;font-weight:500">${m.title}</span></div><div style="font-size:11px;color:#888;margin-bottom:.875rem">${m.servings}</div>`;
   m.components.forEach(c=>{h+=`<div class="detail-comp"><span class="detail-label">${c.label}</span><div><div class="detail-name">${c.val}</div><div class="detail-note">${c.note}</div></div></div>`;});
   h+=`<div style="display:flex;gap:5px;flex-wrap:wrap;margin:10px 0 8px">`;
   m.appliances.forEach(a=>h+=`<span class="pill">${a}</span>`);
-  h+=`</div><div class="tip">${m.tip}</div><div style="font-size:11px;color:#666;margin-top:8px;padding-top:8px;border-top:1px solid #f0f0ee">${m.store}</div></div>`;
+  h+=`</div><div class="tip">${m.tip}</div></div>`;
   document.getElementById('meal-detail').innerHTML=h;
 }
 
@@ -395,8 +401,8 @@ function toggleItem(id){
   renderGrocery();
 }
 
-function resetChecked(){
-  if(confirm('Reset checkboxes and edits?')){checked.clear();saveChecked();edits={};saveEdits();editingId=null;renderGrocery();}
+function resetAll(){
+  if(confirm('Reset all checkboxes and edits?')){checked.clear();saveChecked();edits={};saveEdits();editingId=null;renderGrocery();}
 }
 
 function filterGrocery(f,btn){
@@ -404,73 +410,6 @@ function filterGrocery(f,btn){
   document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
   renderGrocery();
-}
-
-function getStoreClass(s){return{fm:'store-fm',tj:'store-tj',hmart:'store-hmart',any:''}[s]||'';}
-function getStoreLabel(s){return{fm:'Fred Meyer',tj:"TJ's",hmart:'H Mart',any:''}[s]||'';}
-
-function renderGrocery(){
-  let all=[];
-  groceryData.forEach(s=>s.items.forEach((it,i)=>all.push({...it,id:s.section+i,section:s.section})));
-  const total=all.length,done=all.filter(i=>checked.has(i.id)).length;
-  document.getElementById('total-items').textContent=total;
-  document.getElementById('checked-items').textContent=done;
-  document.getElementById('remaining-items').textContent=total-done;
-  document.getElementById('progress-bar').style.width=(total?Math.round(done/total*100):0)+'%';
-  let h='';
-  groceryData.forEach(s=>{
-    let items=s.items.map((it,i)=>({...it,id:s.section+i,section:s.section}));
-    if(currentFilter!=='all'){
-      if(currentFilter==='deals')items=items.filter(i=>i.deal);
-      else items=items.filter(i=>i.section===currentFilter);
-    }
-    if(!items.length)return;
-    h+=`<div class="grocery-section"><span class="sec-label sec-${s.section}">${s.section}</span>`;
-    items.forEach(it=>{
-      const d=checked.has(it.id);
-      const sc=getStoreClass(it.store);
-      const sl=getStoreLabel(it.store);
-      const ov=edits[it.id];
-      const displayName=ov?ov.name:it.name;
-      const displayQty=ov?ov.qty:it.qty;
-      const isEditing=editingId===it.id;
-      const isDeleted=ov&&ov.deleted;
-      if(isDeleted)return;
-      if(isEditing){
-        h+=`<div style="padding:7px 0;border-bottom:1px solid #f0f0ee">
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
-            <div class="check-box ${d?'checked':''}"><svg class="check-icon" width="10" height="10" viewBox="0 0 10 10"><polyline points="1.5,5 4,7.5 8.5,2.5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="font-size:13px;font-weight:500;color:#888">Editing item</span>
-          </div>
-          <div class="edit-form">
-            <input class="edit-field" id="ef-name-${it.id}" value="${displayName.replace(/"/g,'&quot;')}" placeholder="Item name">
-            <input class="edit-field" id="ef-qty-${it.id}" value="${displayQty.replace(/"/g,'&quot;')}" placeholder="Quantity">
-            <div class="edit-actions">
-              <button class="edit-save" onclick="saveEdit('${it.id}')">Save</button>
-              <button class="edit-cancel" onclick="cancelEdit()">Cancel</button>
-              <button class="edit-delete" onclick="deleteItem('${it.id}')">Remove</button>
-            </div>
-          </div>
-        </div>`;
-      } else {
-        h+=`<div style="display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:1px solid #f0f0ee">
-          <div class="check-box ${d?'checked':''}" onclick="toggleItem('${it.id}')" style="cursor:pointer;margin-top:2px"><svg class="check-icon" width="10" height="10" viewBox="0 0 10 10"><polyline points="1.5,5 4,7.5 8.5,2.5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div style="flex:1" onclick="toggleItem('${it.id}')" style="cursor:pointer">
-            <div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px">
-              <span class="grocery-name ${d?'done':''}">${displayName}</span>
-              ${ov?'<span class="item-edited">edited</span>':''}
-              ${it.deal&&!ov?`<span class="deal-tag">${it.dealText}</span>`:''}
-              ${sc&&!ov?`<span class="store-tag ${sc}">${sl}</span>`:''}
-            </div>
-            <div class="grocery-qty">${displayQty}</div>
-          </div>
-          <button class="edit-btn" onclick="startEdit('${it.id}')" title="Edit item">&#9998;</button>
-        </div>`;
-      }
-    });
-    h+=`</div>`;
-  });
-  document.getElementById('grocery-list').innerHTML=h;
 }
 
 function startEdit(id){editingId=id;renderGrocery();setTimeout(()=>{const el=document.getElementById('ef-name-'+id);if(el)el.focus();},50);}
@@ -488,49 +427,117 @@ function saveEdit(id){
   renderGrocery();
 }
 function deleteItem(id){
-  if(confirm('Remove this item from the list?')){
-    edits[id]={deleted:true};
-    saveEdits();
-    editingId=null;
-    renderGrocery();
+  if(confirm('Remove this item?')){edits[id]={deleted:true};saveEdits();editingId=null;renderGrocery();}
+}
+
+let pantryOpen=true;
+function togglePantry(){pantryOpen=!pantryOpen;renderGrocery();}
+
+function renderGrocery(){
+  let all=[];
+  groceryData.forEach(s=>s.items.forEach((it,i)=>all.push({...it,id:s.section+i,section:s.section})));
+  const total=all.filter(i=>!(edits[i.id]&&edits[i.id].deleted)).length;
+  const done=all.filter(i=>checked.has(i.id)&&!(edits[i.id]&&edits[i.id].deleted)).length;
+  document.getElementById('total-items').textContent=total;
+  document.getElementById('checked-items').textContent=done;
+  document.getElementById('remaining-items').textContent=total-done;
+  document.getElementById('progress-bar').style.width=(total?Math.round(done/total*100):0)+'%';
+  let h='';
+  groceryData.forEach(s=>{
+    let items=s.items.map((it,i)=>({...it,id:s.section+i,section:s.section}));
+    if(currentFilter!=='all'){
+      if(currentFilter==='deals')items=items.filter(i=>i.deal);
+      else items=items.filter(i=>i.section===currentFilter);
+    }
+    items=items.filter(i=>!(edits[i.id]&&edits[i.id].deleted));
+    if(!items.length)return;
+    h+=`<div class="grocery-section"><span class="sec-label sec-${s.section}">${s.section}</span>`;
+    items.forEach(it=>{
+      const d=checked.has(it.id);
+      const ov=edits[it.id];
+      const displayName=ov?ov.name:it.name;
+      const displayQty=ov?ov.qty:it.qty;
+      const isEditing=editingId===it.id;
+      if(isEditing){
+        h+=`<div style="padding:7px 0;border-bottom:1px solid #f0f0ee">
+          <div style="font-size:12px;color:#888;margin-bottom:6px">Editing item</div>
+          <div class="edit-form">
+            <input class="edit-field" id="ef-name-${it.id}" value="${displayName.replace(/"/g,'&quot;')}" placeholder="Item name">
+            <input class="edit-field" id="ef-qty-${it.id}" value="${displayQty.replace(/"/g,'&quot;')}" placeholder="Quantity / notes">
+            <div class="edit-actions">
+              <button class="edit-save" onclick="saveEdit('${it.id}')">Save</button>
+              <button class="edit-cancel" onclick="cancelEdit()">Cancel</button>
+              <button class="edit-delete" onclick="deleteItem('${it.id}')">Remove</button>
+            </div>
+          </div>
+        </div>`;
+      } else {
+        const mealNames=(it.meals||[]).map(m=>mealFullName[m]).filter(Boolean).join(' · ');
+        h+=`<div class="grocery-row">
+          <div class="check-box ${d?'checked':''}" onclick="toggleItem('${it.id}')"><svg class="check-icon" width="10" height="10" viewBox="0 0 10 10"><polyline points="1.5,5 4,7.5 8.5,2.5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div style="flex:1;cursor:pointer" onclick="toggleItem('${it.id}')">
+            <div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px">
+              <span class="grocery-name ${d?'done':''}">${displayName}</span>
+              ${ov?'<span class="item-edited">edited</span>':''}
+              ${it.deal&&!ov?`<span class="deal-tag">${it.dealText}</span>`:''}
+            </div>
+            <div class="grocery-qty">${displayQty}</div>
+            ${mealNames&&!ov?`<div style="font-size:11px;color:#1D9E75;margin-top:2px;font-weight:500">${mealNames}</div>`:''}
+          </div>
+          <button class="edit-btn" onclick="startEdit('${it.id}')">&#9998;</button>
+        </div>`;
+      }
+    });
+    h+=`</div>`;
+  });
+  // Pantry section — always show unless filter is active deals/section
+  if(currentFilter==='all'||currentFilter==='pantry'){
+    h+=`<div class="pantry-section">`;
+    h+=`<div class="pantry-hdr" onclick="togglePantry()"><span>On hand — pantry items</span><span class="pantry-hdr-toggle">${pantryOpen?'hide':'show'}</span></div>`;
+    if(pantryOpen){
+      pantryData.forEach(p=>{
+        const pMealNames=p.meals.map(m=>mealFullName[m]).filter(Boolean).join(' · ');
+        h+=`<div class="pantry-row">
+          <div class="pantry-dot"></div>
+          <div style="flex:1">
+            <span class="pantry-name">${p.name}</span>
+            <div class="pantry-note">${p.qty} · ${p.note}</div>
+            ${pMealNames?`<div style="font-size:11px;color:#1D9E75;margin-top:2px;font-weight:500">${pMealNames}</div>`:''}
+          </div>
+        </div>`;
+      });
+    }
+    h+=`</div>`;
   }
+  document.getElementById('grocery-list').innerHTML=h;
 }
 
 function renderSchedule(){
   let h='';
   scheduleData.forEach(d=>{h+=`<div><div class="day-hdr">${d.day}</div><div class="slot ${d.lunch}">${d.ln}<span class="slot-type">lunch</span></div><div class="slot ${d.dinner}">${d.dn}<span class="slot-type">dinner</span></div></div>`;});
   document.getElementById('schedule-grid').innerHTML=h;
-  let sh='';
-  storeRouting.forEach(s=>{sh+=`<div style="display:flex;gap:10px;padding:8px 0;border-bottom:1px solid #f0f0ee;align-items:flex-start"><span class="store-tag ${s.color}" style="padding:3px 10px;font-size:12px;white-space:nowrap">${s.store}</span><span style="font-size:12px;color:#666">${s.items}</span></div>`;});
-  document.getElementById('store-routing').innerHTML=sh;
 }
 
 function renderPrep(){
   let h='';
-  prepSteps.forEach((s,i)=>{h+=`<div class="step-row"><div class="step-num">${i+1}</div><div style="flex:1"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:3px"><div class="step-task">${s.task}</div><span class="pill">${s.appliance}</span><span style="font-size:11px;color:#888">${s.time}</span></div><div class="step-note">${s.note}</div></div></div>`;});
+  prepSteps.forEach((s,i)=>{
+    h+=`<div class="step-row"><div class="step-num">${i+1}</div><div style="flex:1"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:3px"><span class="thread-badge ${s.tc}">${s.thread}</span><div class="step-task">${s.task}</div><span style="font-size:11px;color:#888">${s.time}</span></div><div class="step-note">${s.note}</div></div></div>`;
+  });
   document.getElementById('prep-steps').innerHTML=h;
 }
 
 function renderDeals(){
   let h='';
   dealsData.forEach(d=>{
-    const sc=d.store==='Fred Meyer'?'store-fm':d.store==="Trader Joe's"?'store-tj':'store-hmart';
-    h+=`<div class="deal-row"><div style="flex:1"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:2px"><div class="deal-name">${d.name}</div><span class="store-tag ${sc}">${d.store}</span></div><div style="font-size:11px;color:#666">${d.type} &nbsp;·&nbsp; ${d.note}</div></div><div class="deal-savings">${d.savings}</div></div>`;
+    h+=`<div class="deal-row"><div style="flex:1"><div class="deal-name" style="font-size:13px;font-weight:500;margin-bottom:2px">${d.name}</div><div style="font-size:11px;color:#666">${d.type} &nbsp;·&nbsp; ${d.note}</div></div><div class="deal-savings">${d.savings}</div></div>`;
   });
   document.getElementById('deals-list').innerHTML=h;
 }
 
 function renderNotes(){
   const el=document.getElementById('note-items');
-  if(!notes.length){el.innerHTML='<div style="font-size:13px;color:#aaa;text-align:center;padding:2rem 0">No notes yet — add one above</div>';return;}
-  el.innerHTML=notes.map((n,i)=>`
-    <div class="note-item">
-      <div style="flex:1">
-        <div class="note-item-text">${n.text.replace(/</g,'&lt;')}</div>
-        <div class="note-timestamp">${n.time}</div>
-      </div>
-      <button class="note-delete" onclick="deleteNote(${i})">×</button>
-    </div>`).join('');
+  if(!notes.length){el.innerHTML='<div style="font-size:13px;color:#aaa;text-align:center;padding:2rem 0">No notes yet</div>';return;}
+  el.innerHTML=notes.map((n,i)=>`<div class="note-item"><div style="flex:1"><div class="note-item-text">${n.text.replace(/</g,'&lt;')}</div><div class="note-timestamp">${n.time}</div></div><button class="note-delete" onclick="deleteNote(${i})">×</button></div>`).join('');
 }
 
 function addNote(){
@@ -546,20 +553,10 @@ function addNote(){
 }
 
 function deleteNote(i){notes.splice(i,1);saveNotes();renderNotes();}
+function clearAllNotes(){if(notes.length&&confirm('Clear all notes?')){notes=[];saveNotes();renderNotes();}}
+function appendTag(tag){const input=document.getElementById('note-input');input.value=(input.value+tag).trimStart();input.focus();}
 
-function clearAllNotes(){
-  if(notes.length&&confirm('Clear all notes?')){notes=[];saveNotes();renderNotes();}
-}
-
-function appendTag(tag){
-  const input=document.getElementById('note-input');
-  input.value=(input.value+tag).trimStart();
-  input.focus();
-}
-
-document.getElementById('note-input').addEventListener('keydown',function(e){
-  if(e.key==='Enter'&&(e.metaKey||e.ctrlKey))addNote();
-});
+document.getElementById('note-input').addEventListener('keydown',function(e){if(e.key==='Enter'&&(e.metaKey||e.ctrlKey))addNote();});
 
 selectMeal(1);
 renderGrocery();
