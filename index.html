@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>stokt. — Week 6</title>
+<title>stokt. — Week 7</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:14px;color:#1a1a1a;background:#f7f7f5;padding:16px}
@@ -19,9 +19,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-siz
 .meal-card{background:#fff;border:1px solid #e5e5e3;border-radius:12px;padding:1rem;cursor:pointer}
 .meal-card.active{border:2px solid #378ADD}
 .meal-badge{display:inline-block;font-size:11px;font-weight:500;padding:2px 8px;border-radius:8px;margin-bottom:6px}
-.m1-badge{background:#FAEEDA;color:#633806}
-.m2-badge{background:#E1F5EE;color:#085041}
-.m3-badge{background:#E6F1FB;color:#0C447C}
+.m1-badge{background:#FAECE7;color:#712B13}
+.m2-badge{background:#E6F1FB;color:#0C447C}
+.m3-badge{background:#EAF3DE;color:#27500A}
 .ms-badge{background:#F3EDFB;color:#3A1A5C}
 .meal-title{font-size:13px;font-weight:500;margin-bottom:8px}
 .comp-row{display:flex;gap:8px;margin-bottom:4px}
@@ -83,9 +83,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-siz
 .schedule-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:1.25rem}
 .day-hdr{font-size:11px;font-weight:500;color:#888;text-align:center;padding-bottom:3px}
 .slot{border-radius:8px;padding:6px 4px;text-align:center;font-size:11px;font-weight:500;border:1px solid #e5e5e3;margin-bottom:5px}
-.slot.m1{background:#FAEEDA;color:#633806;border-color:#FAC775}
-.slot.m2{background:#E1F5EE;color:#085041;border-color:#9FE1CB}
-.slot.m3{background:#E6F1FB;color:#0C447C;border-color:#B5D4F4}
+.slot.m1{background:#FAECE7;color:#712B13;border-color:#F0997B}
+.slot.m2{background:#E6F1FB;color:#0C447C;border-color:#B5D4F4}
+.slot.m3{background:#EAF3DE;color:#27500A;border-color:#C0DD97}
 .slot-type{font-size:10px;font-weight:400;opacity:.7;display:block;margin-top:1px}
 .step-row{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid #f0f0ee}
 .step-row:last-child{border-bottom:none}
@@ -115,7 +115,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-siz
 <body>
 <div class="app">
 <div class="app-name">stokt.</div>
-<div class="app-sub">Week of Apr 27 &nbsp;·&nbsp; Fred Meyer &nbsp;·&nbsp; Apr 22–28</div>
+<div class="app-sub">Week of May 4 &nbsp;·&nbsp; Fred Meyer &nbsp;·&nbsp; May 3–4 shop</div>
 
 <div class="tabs">
   <button class="tab active" onclick="switchTab('meals',this)">Meals</button>
@@ -131,31 +131,31 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-siz
   <div class="meal-cards">
     <div class="meal-card active" id="mc-1" onclick="selectMeal(1)">
       <span class="meal-badge m1-badge">Meal 1</span>
-      <div class="meal-title">Pampa Steakhouse Bowl</div>
-      <div class="comp-row"><span class="comp-label">Protein</span><span class="comp-val">Petite sirloin</span></div>
-      <div class="comp-row"><span class="comp-label">Carb</span><span class="comp-val">Lime-cilantro quinoa</span></div>
-      <div class="comp-row"><span class="comp-label">Veggie</span><span class="comp-val">Charred roasted broccoli</span></div>
+      <div class="meal-title">Latin Tinga Bowl</div>
+      <div class="comp-row"><span class="comp-label">Protein</span><span class="comp-val">Ancho-citrus ground chicken</span></div>
+      <div class="comp-row"><span class="comp-label">Carb</span><span class="comp-val">Red bulgur</span></div>
+      <div class="comp-row"><span class="comp-label">Veggie</span><span class="comp-val">Charred broccoli curtido</span></div>
     </div>
     <div class="meal-card" id="mc-2" onclick="selectMeal(2)">
       <span class="meal-badge m2-badge">Meal 2</span>
-      <div class="meal-title">Amalfi Roast</div>
-      <div class="comp-row"><span class="comp-label">Protein</span><span class="comp-val">Chicken breast (sous vide)</span></div>
-      <div class="comp-row"><span class="comp-label">Carb</span><span class="comp-val">Bone broth farro</span></div>
-      <div class="comp-row"><span class="comp-label">Veggie</span><span class="comp-val">Roasted zucchini coins</span></div>
+      <div class="meal-title">Mediterranean Pork</div>
+      <div class="comp-row"><span class="comp-label">Protein</span><span class="comp-val">Pork tenderloin (sous vide)</span></div>
+      <div class="comp-row"><span class="comp-label">Carb</span><span class="comp-val">Barley tabbouleh + lentils</span></div>
+      <div class="comp-row"><span class="comp-label">Finish</span><span class="comp-val">Microgreen gremolata</span></div>
     </div>
     <div class="meal-card" id="mc-3" onclick="selectMeal(3)">
       <span class="meal-badge m3-badge">Meal 3</span>
-      <div class="meal-title">Harvest Skillet</div>
-      <div class="comp-row"><span class="comp-label">Protein</span><span class="comp-val">Ground chicken + pinto beans</span></div>
-      <div class="comp-row"><span class="comp-label">Carb</span><span class="comp-val">Sweet potato (skin-on)</span></div>
-      <div class="comp-row"><span class="comp-label">Veggie</span><span class="comp-val">Broccoli & zucchini sauté</span></div>
+      <div class="meal-title">Turkey Larb Bowl</div>
+      <div class="comp-row"><span class="comp-label">Protein</span><span class="comp-val">Spiced ground turkey larb</span></div>
+      <div class="comp-row"><span class="comp-label">Carb</span><span class="comp-val">Jasmine + lentil rice</span></div>
+      <div class="comp-row"><span class="comp-label">Finish</span><span class="comp-val">Lime-fish sauce dressing + fresh herbs</span></div>
     </div>
     <div class="meal-card" id="mc-s" onclick="selectMeal('s')">
       <span class="meal-badge ms-badge">Cold Side</span>
-      <div class="meal-title">Greek Quinoa Salad</div>
-      <div class="comp-row"><span class="comp-label">Base</span><span class="comp-val">Quinoa + marinated chickpeas</span></div>
-      <div class="comp-row"><span class="comp-label">Veggies</span><span class="comp-val">Tomato, cucumber, pepper, olive</span></div>
-      <div class="comp-row"><span class="comp-label">Dress</span><span class="comp-val">Lemon-oregano vinaigrette</span></div>
+      <div class="meal-title">Moroccan Carrot Salad</div>
+      <div class="comp-row"><span class="comp-label">Base</span><span class="comp-val">Shredded carrot + orange segments</span></div>
+      <div class="comp-row"><span class="comp-label">Dress</span><span class="comp-val">Cumin-citrus-harissa vinaigrette</span></div>
+      <div class="comp-row"><span class="comp-label">Finish</span><span class="comp-val">Cilantro + microgreens</span></div>
     </div>
   </div>
   <div id="meal-detail"></div>
@@ -173,7 +173,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-siz
     <button class="filter-btn active" onclick="filterGrocery('all',this)">All</button>
     <button class="filter-btn" onclick="filterGrocery('PROTEIN',this)">Protein</button>
     <button class="filter-btn" onclick="filterGrocery('PRODUCE',this)">Produce</button>
-    <button class="filter-btn" onclick="filterGrocery('DAIRY',this)">Dairy</button>
     <button class="filter-btn" onclick="filterGrocery('PANTRY',this)">Pantry</button>
     <button class="filter-btn" onclick="filterGrocery('deals',this)">Deals only</button>
   </div>
@@ -185,19 +184,29 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-siz
 <div id="tab-schedule" class="panel">
   <p class="section-hdr">Weekly rotation — Sun through Thu</p>
   <div class="schedule-grid" id="schedule-grid"></div>
+  <div style="background:#fff;border:1px solid #e5e5e3;border-radius:12px;padding:1rem 1.25rem;margin-bottom:10px">
+    <div style="font-size:11px;font-weight:500;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Training day assignment</div>
+    <div style="font-size:13px;font-weight:500;margin-bottom:3px">Match meal to effort</div>
+    <div style="font-size:12px;color:#666">Meal 1 — Latin Tinga → lifting days (bulgur = slow-burn fuel). Meal 2 — Mediterranean Pork → rest or low-intensity days (barley = lowest GI). Meal 3 — Korean Turkey → post-run recovery (jasmine rice = fastest glycogen reload).</div>
+  </div>
   <div style="background:#fff;border:1px solid #e5e5e3;border-radius:12px;padding:1rem 1.25rem">
     <div style="font-size:11px;font-weight:500;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Cold side — eat alongside any meal all week</div>
-    <div style="font-size:13px;font-weight:500;margin-bottom:3px">Greek Quinoa Salad with Chickpeas</div>
-    <div style="font-size:12px;color:#666">Uses your marinated chickpeas — already seasoned, no extra work. Gets better as it sits. Holds 4–5 days. Lentils also batched Sunday as a free-form side.</div>
+    <div style="font-size:13px;font-weight:500;margin-bottom:3px">Loose veggie batch — asparagus + roasted cabbage</div>
+    <div style="font-size:12px;color:#666">One container in the fridge all week. Grab and add to any meal at any volume. Asparagus: air fried with lemon zest. Cabbage: oven-roasted wedges with a gochujang-mirin brush on the cut face — caramelized and neutral enough to sit next to any of the three concepts.</div>
+  </div>
+  <div style="background:#fff;border:1px solid #e5e5e3;border-radius:12px;padding:1rem 1.25rem">
+    <div style="font-size:11px;font-weight:500;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Cold side — eat alongside any meal all week</div>
+    <div style="font-size:13px;font-weight:500;margin-bottom:3px">Moroccan Carrot Salad</div>
+    <div style="font-size:12px;color:#666">No-cook, 20 min to build. Holds 4 days and gets better overnight as the spices bloom. Add cilantro and microgreens fresh at service — not during batch.</div>
   </div>
 </div>
 
 <!-- PREP DAY -->
 <div id="tab-prep" class="panel">
   <div class="stats-row">
-    <div class="stat-card"><div class="stat-label">Total steps</div><div class="stat-val">9</div></div>
-    <div class="stat-card"><div class="stat-label">Hands-off</div><div class="stat-val">~1.5h</div><div style="font-size:11px;color:#888">Sous vide</div></div>
-    <div class="stat-card"><div class="stat-label">Active time</div><div class="stat-val">~1h</div></div>
+    <div class="stat-card"><div class="stat-label">Total steps</div><div class="stat-val">11</div></div>
+    <div class="stat-card"><div class="stat-label">Hands-off</div><div class="stat-val">~1.5h</div><div style="font-size:11px;color:#888">Sous vide + grains</div></div>
+    <div class="stat-card"><div class="stat-label">Active time</div><div class="stat-val">~55m</div></div>
   </div>
   <div id="prep-steps"></div>
 </div>
@@ -205,9 +214,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-siz
 <!-- DEALS -->
 <div id="tab-deals" class="panel">
   <div class="stats-row">
-    <div class="stat-card"><div class="stat-label">Deals found</div><div class="stat-val">8</div></div>
-    <div class="stat-card"><div class="stat-label">Est. savings</div><div class="stat-val">~$16</div></div>
-    <div class="stat-card"><div class="stat-label">Valid through</div><div class="stat-val" style="font-size:15px;padding-top:4px">Apr 28</div><div style="font-size:11px;color:#888">Fred Meyer</div></div>
+    <div class="stat-card"><div class="stat-label">Deals found</div><div class="stat-val">5</div></div>
+    <div class="stat-card"><div class="stat-label">Est. savings</div><div class="stat-val">~$14</div></div>
+    <div class="stat-card"><div class="stat-label">Valid through</div><div class="stat-val" style="font-size:15px;padding-top:4px">May 6</div><div style="font-size:11px;color:#888">Fred Meyer</div></div>
   </div>
   <div id="deals-list"></div>
 </div>
@@ -233,127 +242,137 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-siz
 
 </div>
 <script>
-const SK='stokt_w6_checked';
-const NK='stokt_w6_notes';
-const EK='stokt_w6_edits';
+const SK='stokt_w7_checked';
+const NK='stokt_w7_notes';
+const EK='stokt_w7_edits';
 
 const meals={
   1:{
-    badge:'m1-badge',label:'Meal 1',title:'Pampa Steakhouse Bowl',
+    badge:'m1-badge',label:'Meal 1',title:'Latin Tinga Bowl',
     components:[
-      {label:'Protein',val:'Petite sirloin — pan-seared',note:'Pat dry, season generously with cracked pepper + sea salt only (heart health). Ripping hot heavy pan, 4–5 min per side for medium. Rest 10 min before slicing thin. Store sliced for easy portioning all week.'},
-      {label:'Carb',val:'Lime-cilantro quinoa',note:'Half of Sunday\'s rice cooker quinoa batch goes here. After cooking, fluff with fresh lime juice (pantry limes) + chopped fresh cilantro. Bright and acidic against the richness of the steak.'},
-      {label:'Veggie',val:'Charred roasted broccoli',note:'Cut into florets, toss with olive oil + minced garlic (pantry) + red pepper flakes + pinch of salt. Air fry 400°F 12–15 min, shake halfway. Target: charred edges, tender core — not soggy.'},
+      {label:'Protein',val:'Ancho-citrus ground chicken — air fryer',note:'Press 3.5 lbs ground chicken flat onto air fryer tray in a single undisturbed layer. 400°F for 7 min — do not shake. The contact time is what builds the crust. Break apart only after the crust is set. Toss immediately in warm tinga sauce to rehydrate the edges. Run 2–3 rounds.'},
+      {label:'Carb',val:'Red bulgur — cooked in RC1',note:'3 cups dry bulgur in rice cooker with chicken stock + a pinch of ancho powder in the water. Yields ~7.5 cups cooked. Chewy, nutty base with a subtle heat baseline from the cook liquid.'},
+      {label:'Veggie',val:'Charred broccoli curtido + cilantro oil',note:'Oven at 425°F, single layer on sheet pan — do not move for 18–20 min, then broil 3 min for charred tips. Curtido: thin-sliced cucumber + red onion + lime juice + pinch salt, raw. Cilantro oil: blend cilantro + parsley + olive oil, strain — drizzle cold at service.'},
     ],
-    appliances:['Stovetop','Air fryer','Rice cooker'],
-    tip:'Iron-rich post-lift recovery build. Quinoa + broccoli are high-fiber anchors that slow steak protein absorption — sustained energy vs a fast spike. South American / Pampa style.',
+    appliances:['Air fryer','Rice cooker','Oven','Stove'],
+    tip:'Lifting day fuel. Bulgur releases glucose slowly — no spike and crash mid-session. Ground chicken is the leanest protein-per-gram option this week. Curtido adds raw crunch contrast against the sauced protein and charred veg — the textural range is what makes this feel like actual food.',
   },
   2:{
-    badge:'m2-badge',label:'Meal 2',title:'Amalfi Roast',
+    badge:'m2-badge',label:'Meal 2',title:'Mediterranean Pork',
     components:[
-      {label:'Protein',val:'Chicken breast — sous vide 145°F',note:'Season with Herbes de Provence + lemon zest + fresh thyme (pantry) + rosemary. Bag and seal. Sous vide 145°F for 90 min. Pat completely dry after, quick sear in ripping hot cast iron 60–90 sec per side for color. Start first — completely unattended.'},
-      {label:'Carb',val:'Farro in bone broth',note:'1.5 cups dry farro + 3 cups chicken bone broth + finely diced shallot (pantry) in Instant Pot. High pressure 10 min, natural release 10 min. Chewy, nutty, savory depth. Far better than water. Farro is the gold-standard low-GI grain.'},
-      {label:'Veggie',val:'Roasted zucchini coins',note:'Slice into thick coins (~1 inch). Toss with olive oil + salt + pepper. Air fry 390°F 18 min until caramelized on edges. Don\'t crowd the basket — do in batches if needed. Caramelized edges are the goal.'},
+      {label:'Protein',val:'Pork tenderloin — sous vide 140°F',note:'Bag each tenderloin separately with smashed garlic + olive oil + dried oregano + za\'atar. Sous vide 140°F for 90 min. Pat completely dry after. Air fryer sear at 450°F for 4 min — crust forms fast. Rest 5 min, slice ½ inch. Holds in the bag refrigerated 5 days before searing.'},
+      {label:'Carb',val:'Pearled barley tabbouleh',note:'2.5 cups dry barley in RC1 with stock + bay leaf after bulgur finishes. Fluff and cool on sheet pan. Toss cold with 2 bunches chopped parsley, diced cucumber, minced shallot, lemon juice, EVOO, Dijon, za\'atar. The barley clings to the dressing like a risotto — that\'s intentional.'},
+      {label:'Finish',val:'Green lentils + microgreen gremolata',note:'1.5 cups green lentils in RC2 at T+55m with stock + shallot. Portion alongside barley in each container. Gremolata: parsley + lemon zest + raw garlic minced fine — applied cold at service over the top. Do not cook it in.'},
     ],
-    appliances:['Sous vide','Instant Pot','Air fryer'],
-    tip:'Farro provides steady glucose release for Zone 2 runs — lowest GI of all the grains this week. Herbes de Provence + thyme + lemon on chicken is the classic Amalfi / South France profile.',
+    appliances:['Sous vide','Air fryer','Rice cooker'],
+    tip:'Rest day or low-intensity run day meal. Barley is the lowest GI grain of the week — slowest glucose release. Pork tenderloin is gram-for-gram leaner than chicken breast. Lentils add a second protein vector and folate. Gremolata applied cold is the Milk Street move — it stays bright rather than wilting into the heat.',
   },
   3:{
-    badge:'m3-badge',label:'Meal 3',title:'Harvest Skillet',
+    badge:'m3-badge',label:'Meal 3',title:'Turkey Larb Bowl',
     components:[
-      {label:'Protein',val:'Ground chicken + pinto beans',note:'Brown ground chicken in skillet with olive oil, medium-high heat. Season mid-cook with sage + onion powder + smoked paprika + salt + pepper. Add pantry pinto beans last 2 min just to warm through and bulk it out. Don\'t overcook — it reheats.'},
-      {label:'Carb',val:'Sweet potato cubes — skin-on',note:'Keep skin on: adds ~4g extra fiber and meaningfully lowers GI vs peeled. Cube, toss with olive oil + salt. Air fry 390°F 22 min until tender inside, crispy edges. Don\'t peel.'},
-      {label:'Veggie',val:'Broccoli & zucchini sauté',note:'Quick stovetop sauté in olive oil, high heat, 4–5 min max. Season with garlic + salt. Keep the snap — don\'t steam or overcook. These come from the same batch as Meals 1 and 2, so just pull from containers and warm through.'},
+      {label:'Protein',val:'Ground turkey — air fryer, plain cook',note:'No marinade this time. Press 3.5 lbs ground turkey flat onto air fryer tray, 400°F / 9–10 min undisturbed. Plain salt only before cooking — you want a neutral base that the larb dressing penetrates fully. Break apart after crust sets. 3 rounds. The flavor lives in the dressing, not the cook.'},
+      {label:'Dress',val:'Larb dressing — apply at portioning',note:'Whisk: 4 tbsp fish sauce + 5 tbsp lime juice + 1.5 tsp sugar + 1–2 tsp chili flakes (or 2 fresh Thai chilies, minced) + 2 tbsp toasted rice powder. Taste — it should be aggressively sour, salty, spicy, with the rice powder giving a nutty dry finish. Make a double batch and keep a reserve jar in the fridge for freshening mid-week. Dress the turkey at portioning, not during cook.'},
+      {label:'Fresh',val:'Shallots + mint + cilantro + green onion — add cold',note:'2 shallots thin-sliced raw, small handful torn mint leaves, cilantro, sliced green onion. All added cold at portioning directly on top of the dressed turkey — do not mix into the hot protein or the herbs wilt. At service, toss lightly. Cucumber pickle from the batch (rice vinegar + sesame oil + salt) works well on the side.'},
+      {label:'Carb',val:'Jasmine + lentil rice — RC2',note:'3 cups jasmine rice + 1 cup green lentils cooked together 3:1 water ratio in RC2. Lentils dissolve into a creamy substrate. Highest GI grain of the week — deploy this after runs when glycogen reload is the priority.'},
     ],
-    appliances:['Stovetop','Air fryer'],
-    tip:'Pinto beans (pantry) bulk out the ground chicken with extra fiber + plant protein at zero cost. Skin-on sweet potatoes lower glycemic impact vs peeled — the skin is where the fiber lives.',
+    appliances:['Air fryer','Rice cooker','No heat dressing'],
+    tip:'Post-run recovery meal. Larb solves turkey\'s blandness with acid, not fat — lime and fish sauce penetrate the protein rather than sitting on the surface. Toasted rice powder is non-negotiable: 3 min in a dry pan with uncooked jasmine rice until golden, then grind. It gives the dressing a nutty, slightly dusty texture that separates larb from just seasoned ground meat. The dressing keeps 5 days refrigerated — make extra.',
   },
   s:{
-    badge:'ms-badge',label:'Cold Side',title:'Greek Quinoa Salad with Chickpeas',
+    badge:'ms-badge',label:'Cold Side',title:'Moroccan Carrot Salad',
     components:[
-      {label:'Base',val:'Quinoa + marinated chickpeas (pantry)',note:'Half of Sunday\'s rice cooker quinoa batch goes here. Use your marinated chickpeas directly — already seasoned, no prep needed. They go straight into the dressing to marinate further while you prep the veg.'},
-      {label:'Veggies',val:'Cherry tomatoes (pantry), cucumber, green pepper, red onion, olives, feta',note:'Your full pantry carton of cherry tomatoes goes here. Dice cucumber + green pepper, fine-dice half a red onion, halve the olives. Fresh thyme (pantry) optional for herby note. Crumble feta over top.'},
-      {label:'Dress',val:'Lemon-oregano vinaigrette — pantry lemons',note:'4 tbsp EVOO + 3 tbsp lemon juice (pantry lemons) + 1 tsp lemon zest + 1 tbsp Dijon + 1 tbsp honey + 1.5 tsp dried oregano + pinch salt + pinch pepper. Whisk first in large bowl, then add chickpeas to marinate before adding everything else.'},
+      {label:'Base',val:'Shredded carrot + orange segments',note:'1.5 lbs carrots peeled and shredded on large holes of box grater. 2 oranges — cut peel and pith away, slice between membranes to release segments over a bowl, reserve all juice. Halve segments crosswise. Let drain in strainer set over juice bowl.'},
+      {label:'Dress',val:'Cumin-citrus-harissa vinaigrette',note:'Whisk reserved orange juice + 1 tbsp lemon juice + 3 tbsp EVOO + 1 tsp honey + 1 tsp ground cumin + ¼ tsp cinnamon + ¼ tsp cayenne + ¾ tsp salt + 1.5 tbsp harissa paste. Should taste bright, lightly sweet, warmly spiced with a low hum of heat. Adjust lemon if it falls flat.'},
+      {label:'Finish',val:'Cilantro + microgreens — add at service',note:'Toss drained carrots + oranges with dressing. Rest 3–5 min until liquid pools at bottom. Drain through strainer, return to bowl, stir in 3 tbsp chopped cilantro. Portion into cold-side containers. Add microgreens at service only — they go gray in the dressing by day 2.'},
     ],
-    appliances:['No heat — batch Sunday','~15 min total'],
-    tip:'Nico Pallotta / The Plant Based School recipe. Using marinated chickpeas means zero extra work on seasoning. Gets significantly better after 30+ min in fridge. Holds 4–5 days easily.',
+    appliances:['No heat — 20 min total','Build last in session'],
+    tip:'Inspired by the ATK Moroccan-Style Carrot Salad. Two additions from the original: harissa replaces plain cayenne, microgreens finish instead of garnish. Gets meaningfully better overnight as the spices bloom into the carrot. Completely distinct from last week\'s Greek Quinoa — different texture, different flavor register, different base ingredient.',
   },
 };
 
 const groceryData=[
   {section:'PROTEIN',items:[
-    {name:'Boneless Petite Sirloin',qty:'2 lbs — value pack',deal:true,dealText:'$5.99/lb',meals:'Meal 1 — Pampa Steakhouse'},
-    {name:'Simple Truth Natural Chicken Breast',qty:'2 lbs — no antibiotics ever',deal:true,dealText:'$5.49/lb',meals:'Meal 2 — Amalfi Roast (sous vide)'},
-    {name:'Ground Chicken',qty:'1.5 lbs',deal:false,meals:'Meal 3 — Harvest Skillet'},
+    {name:'Ground chicken',qty:'3.5 lbs',deal:false,meals:'Meal 1 — Latin Tinga Bowl'},
+    {name:'Pork tenderloin',qty:'3 lbs (~2 loins)',deal:true,dealText:'check price/lb',meals:'Meal 2 — Mediterranean Pork'},
+    {name:'Ground turkey',qty:'3.5 lbs',deal:false,meals:'Meal 3 — Korean Turkey Rice'},
   ]},
   {section:'PRODUCE',items:[
-    {name:'Broccoli',qty:'2 large heads (~2 lbs)',deal:false,meals:'Meal 1 + Meal 3 medley'},
-    {name:'Zucchini',qty:'6–7 medium (~3 lbs)',deal:false,meals:'Meal 2 + Meal 3 medley'},
-    {name:'Sweet Potatoes',qty:'3–4 medium (skin-on cubes)',deal:false,meals:'Meal 3 — Harvest Skillet'},
-    {name:'Cucumber',qty:'1 small',deal:false,meals:'Greek Quinoa Salad'},
-    {name:'Green Bell Pepper',qty:'1',deal:false,meals:'Greek Quinoa Salad'},
-    {name:'Red Onion',qty:'1 medium',deal:false,meals:'Greek Quinoa Salad'},
-    {name:'Fresh Cilantro',qty:'1 bunch',deal:false,meals:'Meal 1 — lime-cilantro quinoa'},
-  ]},
-  {section:'DAIRY',items:[
-    {name:'Feta cheese (crumbled or block)',qty:'4 oz — preferably in brine',deal:false,meals:'Greek Quinoa Salad'},
+    {name:'Broccoli',qty:'3.5 large heads (~4 lbs)',deal:false,meals:'Meal 1 + Meal 3 — roast all on one oven run'},
+    {name:'English cucumber',qty:'3 large',deal:false,meals:'Meal 1 curtido · Meal 2 tabbouleh · Meal 3 pickle'},
+    {name:'Carrots',qty:'1.5 lbs',deal:false,meals:'Cold Side — Moroccan Carrot Salad'},
+    {name:'Oranges',qty:'2 large',deal:false,meals:'Cold Side — segment + reserve juice for dressing'},
+    {name:'Lemons',qty:'4–5',deal:false,meals:'Meal 1 curtido · Meal 2 dressing + gremolata · Cold Side'},
+    {name:'Limes',qty:'5–6',deal:false,meals:'Meal 1 curtido + tinga · Meal 3 larb dressing (5 tbsp juice needed)'},
+    {name:'Green onion',qty:'2 bunches',deal:false,meals:'Meal 3 — larb fresh layer + garnish'},
+    {name:'Fresh mint',qty:'1 bunch',deal:false,meals:'Meal 3 — larb fresh layer, torn cold at portioning'},
+    {name:'Fresh cilantro',qty:'1 large bunch',deal:false,meals:'Meal 1 cilantro oil · Meal 3 larb · Cold Side finish'},
+    {name:'Parsley',qty:'2.5 bunches',deal:false,meals:'Meal 1 cilantro oil · Meal 2 tabbouleh + gremolata'},
+    {name:'Fresh ginger',qty:'1 knob (2-inch needed)',deal:false,meals:'Meal 3 — turkey marinade'},
+    {name:'Microgreens',qty:'2–3 oz',deal:false,meals:'Meal 2 gremolata · Meal 3 finish · Cold Side'},
+    {name:'Red onion',qty:'1 medium',deal:false,meals:'Meal 1 — curtido'},
+    {name:'Asparagus',qty:'2 lbs — loose batch all week',deal:false,meals:'Loose veggie batch — grab from fridge, add to any meal'},
+    {name:'Green cabbage',qty:'1 large head',deal:false,meals:'Loose veggie batch — roasted wedges, grab from fridge all week'},
   ]},
   {section:'PANTRY',items:[
-    {name:'Quinoa (dry)',qty:'~2 cups — check if stocked',deal:false,meals:'Meal 1 + salad base'},
-    {name:'Farro (dry)',qty:'1.5 cups — check bulk section',deal:false,meals:'Meal 2 — Amalfi Roast'},
-    {name:'Kroger Chicken Bone Broth (32oz)',qty:'2 cartons',deal:true,dealText:'2/$3',meals:'Farro cook liquid + lentil simmer'},
-    {name:'Kalamata Olives (pitted)',qty:'½ cup — small jar',deal:false,meals:'Greek Quinoa Salad'},
+    {name:'Fish sauce',qty:'small bottle (need 4 tbsp)',deal:false,meals:'Meal 3 — larb dressing base'},
+    {name:'Chili flakes (or fresh Thai chilies)',qty:'1–2 tsp flakes or 2 fresh chilies',deal:false,meals:'Meal 3 — larb dressing heat'},
+    {name:'Sugar (white or palm)',qty:'1.5 tsp',deal:false,meals:'Meal 3 — larb dressing balance'},
+    {name:'Rice vinegar',qty:'small bottle (need 3 tbsp)',deal:false,meals:'Meal 3 — cucumber pickle'},
+    {name:'Toasted sesame oil',qty:'small bottle (need 1 tsp)',deal:false,meals:'Meal 3 — cucumber pickle finish'},
+    {name:'Harissa paste',qty:'small jar (need 1.5 tbsp)',deal:false,meals:'Cold Side — dressing'},
+    {name:'Chipotle in adobo',qty:'1 can (need 3–4 peppers)',deal:false,meals:'Meal 1 — tinga sauce'},
+    {name:'Crushed tomato',qty:'1 × 28oz can',deal:false,meals:'Meal 1 — tinga sauce base'},
+    {name:'Chicken stock',qty:'1 carton (need ~3 cups)',deal:true,dealText:'check 2/$3',meals:'Meal 1 bulgur cook · Meal 2 barley + lentils'},
+    {name:'Za\'atar',qty:'small jar',deal:false,meals:'Meal 2 — pork bag + tabbouleh finish'},
+    {name:'Dried oregano',qty:'check pantry stock',deal:false,meals:'Meal 2 — pork sous vide bag'},
+    {name:'Dijon mustard',qty:'check pantry stock',deal:false,meals:'Meal 2 — tabbouleh dressing'},
+    {name:'Honey',qty:'check pantry stock',deal:false,meals:'Cold Side — dressing'},
+    {name:'Ground cumin',qty:'check pantry stock',deal:false,meals:'Meal 1 tinga · Cold Side dressing'},
+    {name:'Ground cinnamon',qty:'check pantry stock',deal:false,meals:'Cold Side — dressing'},
+    {name:'Smoked paprika',qty:'check pantry stock',deal:false,meals:'Meal 1 — tinga sauce'},
   ]},
 ];
 
 const pantryData=[
-  {name:'Marinated chickpeas (~1 cup)',note:'Straight into salad bowl — already seasoned, no extra work',meals:'Greek Quinoa Salad'},
-  {name:'Green lentils (~1 cup)',note:'Simmer 20–25 min with garlic + thyme + salt. Batch side all week — eat with anything',meals:'Ad hoc side all week'},
-  {name:'Pinto beans (1 can)',note:'Stir into ground chicken last 2 min to warm through and bulk out Harvest Skillet',meals:'Meal 3 — Harvest Skillet'},
-  {name:'Cherry tomatoes (carton)',note:'Full carton goes into the Greek salad — no need to buy more',meals:'Greek Quinoa Salad'},
-  {name:'Fresh thyme',note:'Goes in sous vide chicken bag (Meal 2) + optional in lentil simmer + salad',meals:'Meal 2 + Lentils'},
-  {name:'4 lemons',note:'Juice + zest for salad dressing (3 tbsp juice) and chicken marinade (zest)',meals:'Salad + Meal 2'},
-  {name:'4 limes',note:'Juice for quinoa fluff after cooking (Meal 1) — bright and acidic',meals:'Meal 1 quinoa'},
-  {name:'Garlic (fresh)',note:'Broccoli roast, farro cook liquid, lentil simmer',meals:'All meals'},
-  {name:'Shallot',note:'Fine dice into Instant Pot with farro for extra savory depth',meals:'Meal 2 — farro'},
-  {name:'Olive oil (EVOO)',note:'All cooking + salad dressing (4 tbsp)',meals:'All meals'},
-  {name:'Dijon mustard',note:'1 tbsp in salad dressing',meals:'Salad dressing'},
-  {name:'Honey',note:'1 tbsp — balances lemon in dressing',meals:'Salad dressing'},
-  {name:'Dried oregano',note:'1.5 tsp in dressing',meals:'Salad dressing'},
-  {name:'Herbes de Provence',note:'Chicken rub — primary seasoning for Meal 2',meals:'Meal 2'},
-  {name:'Smoked paprika, sage, onion powder',note:'Ground chicken spice blend for Harvest Skillet',meals:'Meal 3'},
-  {name:'Red pepper flakes',note:'Broccoli roast — Meal 1',meals:'Meal 1'},
+  {name:'Red bulgur (3 cups dry)',note:'RC1 at T+0 with chicken stock + ancho powder',meals:'Meal 1 — Latin Tinga Bowl'},
+  {name:'Pearled barley (2.5 cups dry)',note:'RC1 after bulgur finishes — stock + bay leaf',meals:'Meal 2 — Mediterranean Pork'},
+  {name:'Green lentils (2.5 cups dry total)',note:'1.5 cups → RC2 med lentils at T+55m. 1 cup → RC2 jasmine co-cook at T+0',meals:'Meal 2 lentil side + Meal 3 rice base'},
+  {name:'Jasmine rice (3 cups dry + 3 tbsp for rice powder)',note:'RC2 at T+0 with 1 cup green lentils. Extra 3 tbsp toasted night before for larb rice powder.',meals:'Meal 3 — rice base + larb powder'},
+  {name:'Garlic (10 cloves needed)',note:'Meal 1 tinga + Meal 2 sous vide bag + gremolata',meals:'Meal 1 + Meal 2'},
+  {name:'Shallots (6 needed)',note:'Meal 1 tinga sauce · Meal 2 tabbouleh dressing + lentils',meals:'Meal 1 + Meal 2'},
+  {name:'Olive oil (EVOO, ~8 tbsp)',note:'Meal 1 cilantro oil + tinga · Meal 2 pork bag + dressing · Cold Side',meals:'All concepts'},
+  {name:'Bay leaf',note:'Meal 2 — barley cook in RC1',meals:'Meal 2'},
+  {name:'Salt + black pepper',note:'All concepts — season at every stage',meals:'All meals'},
 ];
 
 const scheduleData=[
-  {day:'Sun',lunch:'m1',ln:'Pampa',dinner:'m2',dn:'Amalfi'},
-  {day:'Mon',lunch:'m3',ln:'Harvest',dinner:'m1',dn:'Pampa'},
-  {day:'Tue',lunch:'m2',ln:'Amalfi',dinner:'m3',dn:'Harvest'},
-  {day:'Wed',lunch:'m1',ln:'Pampa',dinner:'m2',dn:'Amalfi'},
-  {day:'Thu',lunch:'m3',ln:'Harvest',dinner:'m1',dn:'Pampa'},
+  {day:'Sun',lunch:'m3',ln:'Larb',dinner:'m2',dn:'Med Pork'},
+  {day:'Mon',lunch:'m1',ln:'Tinga',dinner:'m3',dn:'Larb'},
+  {day:'Tue',lunch:'m2',ln:'Med Pork',dinner:'m1',dn:'Tinga'},
+  {day:'Wed',lunch:'m3',ln:'Larb',dinner:'m2',dn:'Med Pork'},
+  {day:'Thu',lunch:'m1',ln:'Tinga',dinner:'m3',dn:'Larb'},
 ];
 
 const prepSteps=[
-  {task:'Start sous vide — chicken breast at 145°F',appliance:'Sous vide',time:'90 min hands-off',note:'Season with Herbes de Provence + lemon zest + fresh thyme + rosemary. Bag and seal. Start this first every time — it runs completely unattended while everything else happens.'},
-  {task:'Rice cooker — quinoa (double batch)',appliance:'Rice cooker',time:'~20 min',note:'2 cups dry quinoa. Half goes to Pampa (lime + cilantro fluff after cooling). Half goes to Greek salad. Start alongside sous vide — runs itself.'},
-  {task:'Instant Pot — farro in bone broth',appliance:'Instant Pot',time:'10 min HP + 10 min release',note:'1.5 cups dry farro + 3 cups chicken bone broth + finely diced shallot (pantry) + pinch salt. High pressure 10 min, natural release 10 min. Do not rush the release.'},
-  {task:'Simmer green lentils — pantry batch',appliance:'Stovetop',time:'20–25 min',note:'1 cup green lentils + 2 cups water + 2 garlic cloves + 2 sprigs fresh thyme (pantry). Simmer until just tender — don\'t mush. Finish with salt + squeeze of lemon. Ad hoc side all week.'},
-  {task:'Air fry broccoli — Meals 1 & 3',appliance:'Air fryer 1',time:'12–15 min @ 400°F',note:'Florets with olive oil + minced garlic + red pepper flakes + salt. Shake halfway through. Make enough for both Meal 1 portions AND the Meal 3 broccoli-zucchini medley.'},
-  {task:'Air fry zucchini coins + sweet potato cubes',appliance:'Air fryer 2',time:'18–22 min @ 390°F',note:'Zucchini (18 min, 390°F) and sweet potato cubes skin-on (22 min, 390°F). Run simultaneously in both air fryers, or sweet potatoes first if only one. Don\'t crowd.'},
-  {task:'Pan-sear petite sirloin',appliance:'Stovetop',time:'4–5 min/side + 10 min rest',note:'Pat bone dry. Cracked pepper + sea salt only. Ripping hot heavy pan — cast iron ideal. 4–5 min per side for medium. Do not touch while searing. Rest 10 min, slice thin, store.'},
-  {task:'Brown ground chicken + warm pinto beans',appliance:'Stovetop',time:'10–12 min',note:'Second burner. Olive oil, medium-high. Break into crumbles, season with sage + onion powder + smoked paprika mid-cook. Add pantry pinto beans last 2 min. Don\'t overcook — it reheats.'},
-  {task:'Sear sous vide chicken + build salad + portion',appliance:'Stovetop + no heat',time:'20 min',note:'Pat chicken completely dry, ripping hot cast iron, 60–90 sec per side. Rest 5 min. Meanwhile: whisk salad dressing in large bowl, add chickpeas to marinate, chop all veg, add quinoa + feta, toss. Fluff Pampa quinoa with lime juice + cilantro. Portion all meals into containers.'},
+  {task:'Night before — toast rice powder for larb',appliance:'Stove',time:'3 min active',note:'Add 3 tbsp dry jasmine rice to a dry pan over medium heat. Stir constantly until golden and nutty-smelling — about 3 min. Do not walk away. Cool completely, then grind in a spice grinder or blender until a coarse powder. Store in a small jar. This is the non-negotiable larb element — it gives the dressing a dry, nutty texture that no other ingredient replicates.'},
+  {task:'T+0 — sous vide pork + both rice cookers',appliance:'Sous vide + RC1 + RC2',time:'Hands-off from here',note:'Sous vide: bag each tenderloin separately with garlic + EVOO + oregano + za\'atar, 140°F / 90 min. RC1: 3 cups red bulgur + chicken stock + pinch ancho powder. RC2: 3 cups jasmine rice + 1 cup green lentils + water (3:1 ratio). All three run simultaneously, unattended.'},
+  {task:'T+20 — oven broccoli, all at once',appliance:'Oven',time:'20 min + 3 min broil',note:'3.5 heads broccoli, two sheet pans, 425°F. Single undisturbed layer — do not move until the 20 min is up. Broil 3 min for charred tips. Separate into Meal 1 portions and Meal 3 portions after cooling. One oven run covers both concepts.'},
+  {task:'T+30 — stove: tinga sauce',appliance:'Stove',time:'15 min',note:'Olive oil + minced shallots + garlic, soften 3 min. Add 3–4 chipotle peppers + adobo sauce + 28oz crushed tomato + cumin + smoked paprika + ½ cup chicken stock. Simmer 12–15 min until thickened. Taste and adjust — it should be smoky, slightly spicy, and bright from the adobo acid.'},
+  {task:'T+40 — air fryer: ground turkey plain cook (3 rounds)',appliance:'Air fryer',time:'9–10 min per round',note:'No marinade — salt only. Press flat onto tray in a single layer. 400°F / 9–10 min undisturbed. Plain cook gives you a neutral base the larb dressing penetrates fully — flavor lives in the acid, not the crust. Break apart after each round. While rounds 2 and 3 cook, whisk the larb dressing: 4 tbsp fish sauce + 5 tbsp lime juice + 1.5 tsp sugar + chili flakes + 2 tbsp toasted rice powder. Make a double batch — keep a reserve jar refrigerated for mid-week freshening.'},
+  {task:'T+55 — RC1 reload: barley. RC2 reload: med lentils',appliance:'RC1 + RC2',time:'Hands-off',note:'Bulgur and jasmine-lentil rice are both done around T+50. RC1: load 2.5 cups pearled barley + stock + bay leaf. RC2: load 1.5 cups green lentils + stock + minced shallot. Both run unattended while you continue with proteins.'},
+  {task:'T+60 — air fryer round 4–5: ground chicken (2 rounds)',appliance:'Air fryer',time:'7 min per round',note:'Press flat, 400°F / 7 min. Slightly shorter than turkey — leaner and dries faster. Break apart after crust forms. Toss immediately in warm tinga sauce to rehydrate the edges. Do not let it sit dry.'},
+  {task:'T+1h30 — air fryer: pork sear. Build tabbouleh.',appliance:'Air fryer + no heat',time:'4 min sear + 15 min build',note:'Remove pork from bags, pat completely dry. Air fryer 450°F / 4 min — crust forms fast. Rest 5 min, slice ½ inch. Meanwhile: cool barley on sheet pan, then toss cold with 2 bunches chopped parsley + diced cucumber + shallot + lemon juice + EVOO + Dijon + za\'atar.'},
+  {task:'T+1h50 — cucumber pickle + cilantro oil + curtido',appliance:'No heat',time:'15 min',note:'Cucumber pickle: thin-slice cucumber, toss with rice vinegar + sesame oil + salt, set aside 30 min. Cilantro oil: blend cilantro + parsley + EVOO, strain through fine mesh. Curtido: thin-slice cucumber + red onion + lime juice + salt — raw, snappy, immediate.'},
+  {task:'T+2h — loose veggie batch: asparagus + cabbage wedges',appliance:'Air fryer + Oven',time:'25 min total',note:'Cabbage: cut 1 head into 1.5-inch wedges through the core — core holds them together. Brush cut faces with a small amount of the gochujang-mirin marinade (leftover from turkey). Oven 425°F / 25–28 min, flip once at 15 min. Cut face should be deeply caramelized and dark. Asparagus: snap woody ends, toss with EVOO + salt + cracked pepper. Air fryer 400°F / 7–8 min while cabbage finishes in oven. Lemon zest over asparagus after cooking, not before. Store both together in one lidded container — loose batch all week.'},
+  {task:'T+2h15 — Moroccan carrot salad + portion everything',appliance:'No heat',time:'20 min',note:'Shred carrots, segment oranges, whisk dressing (orange juice + lemon + EVOO + honey + cumin + cinnamon + cayenne + harissa), toss and rest 5 min, drain, stir in cilantro. Portion all four concepts into containers. Label by concept. Add microgreens and chili crisp at service only.'},
 ];
 
 const dealsData=[
-  {name:'Boneless Petite Sirloin (value pack)',type:'$5.99/lb w/ Card',savings:'~$4–6',note:'Main protein Meal 1. Pan-sear in heavy skillet — don\'t need sous vide for this cut. Great price for quality sirloin.'},
-  {name:'Simple Truth Natural Chicken Breast',type:'$5.49/lb w/ Card',savings:'~$4',note:'No antibiotics ever. Main protein Meal 2 sous vide. Best quality chicken at Fred Meyer this week.'},
-  {name:'Kroger Broth (32 oz)',type:'2/$3 w/ Card',savings:'~$3',note:'Grab 2 cartons. Farro cooks in bone broth for Meal 2 depth. Use second for lentil simmer if needed.'},
-  {name:'Limes',type:'3/$2 w/ Card',savings:'~$2',note:'Already have 4 in pantry — still worth noting. Lime juice goes into quinoa fluff for Meal 1.'},
-  {name:'Red Tomatoes on the Vine',type:'$2.19/lb w/ Card',savings:'~$2',note:'Already have pantry cherry tomatoes for the salad. Skip this week — pantry covered.'},
-  {name:'Kroger Cottage Cheese (16oz)',type:'$1.99 w/ Card',savings:'~$1.50',note:'High-protein snack between meals. Good plain or with fruit. Worth grabbing as a bonus.'},
-  {name:'Simple Truth Organic Eggs (18ct)',type:'$3.99 w/ Digital Coupon',savings:'~$1',note:'Clip in app before checkout. Pantry staple — hard boil a few for easy protein all week.'},
-  {name:'Dole Salad Kits (7–13oz)',type:'$2.99 — Sat/Sun/Mon 3-Day Sale',savings:'~$2',note:'Emergency greens or add-on to any bowl. Buy Sunday during the shop — only valid through Monday.'},
+  {name:'Ground turkey (93/7 lean)',type:'Check price/lb — buy value pack',savings:'~$4–5',note:'Buy the largest value pack available. 3.5 lbs needed. 93/7 lean is ideal — enough fat to carry the miso-gochujang marinade without drying out in the air fryer.'},
+  {name:'Pork tenderloin',type:'Check price/lb — often on weekly special',savings:'~$3–4',note:'One of the most frequently discounted proteins at Fred Meyer. Buy 2 loins (~1.5 lbs each). Sous vide is the ideal method — pork tenderloin has almost no margin for error cooked any other way.'},
+  {name:'Chicken stock (32oz)',type:'2/$3 w/ Card if available',savings:'~$3',note:'Need 1 carton minimum (bulgur cook + barley cook + lentil simmer). Grab 2 if on deal — uses up through the week in any ad hoc grain cook.'},
+  {name:'Broccoli crowns',type:'Check bulk/lb pricing vs bagged',savings:'~$2',note:'3.5 heads needed total. Buy crowns by weight — cheaper than pre-bagged. All roasted in one oven session at T+20.'},
+  {name:'Carrots (1 lb bag or bulk)',type:'Usually $1–1.50/lb',savings:'~$1',note:'1.5 lbs needed for cold side only. Cheapest item on the entire grocery list. Get a bag.'},
 ];
 
 function loadChecked(){try{const d=localStorage.getItem(SK);return d?new Set(JSON.parse(d)):new Set();}catch(e){return new Set();}}
